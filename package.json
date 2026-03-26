@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@astrojs/vercel": "^10.0.3",
+    "@aws-sdk/client-ses": "^3.1017.0",
     "@iconify-json/simple-icons": "^1.2.75",
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.0.8",

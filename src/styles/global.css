@@ -3,6 +3,10 @@
 /* ── Tailwind v4 dark-mode via .dark class ── */
 @variant dark (&:where(.dark, .dark *));
 
+/* ── Spinner ── */
+@keyframes spin { to { transform: rotate(360deg); } }
+.animate-spin { animation: spin 0.8s linear infinite; display: inline-block; }
+
 /* ── Design tokens ── */
 @theme {
   --color-bg: #fafafa;
