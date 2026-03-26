@@ -1,0 +1,151 @@
+---
+import { experience } from '../data/experience';
+---
+
+<section id="experience" class="py-24" style="background: var(--color-bg);">
+  <div class="container">
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <p class="reveal" style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-orange);">
+        Experience
+      </p>
+      <h2 class="section-title reveal">Where I've worked</h2>
+      <div class="section-divider mx-auto reveal" style="background: var(--color-orange);"></div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="max-w-4xl mx-auto">
+      {experience.map((item, i) => (
+        <div class="reveal flex gap-0 mb-0">
+
+          <!-- LEFT: date + location (right-aligned, 180px) -->
+          <div class="hidden md:flex flex-col items-end justify-start pt-0.5 shrink-0" style="width: 180px; min-width: 180px;">
+            <span
+              class="text-xs font-medium"
+              style={`font-family: 'JetBrains Mono', monospace; color: ${item.periodColor === 'orange' ? 'var(--color-orange)' : 'var(--color-muted)'};`}
+            >
+              {item.period}
+            </span>
+            <span class="text-xs mt-0.5" style="color: var(--color-muted);">{item.location}</span>
+          </div>
+
+          <!-- MIDDLE: dot + vertical line (24px) -->
+          <div class="relative flex flex-col items-center mx-6 shrink-0" style="width: 24px;">
+            <!-- Dot -->
+            <div class="w-3.5 h-3.5 rounded-full border-2 z-10 shrink-0 mt-1"
+              style="background: var(--color-orange); border-color: var(--color-bg);"
+            ></div>
+            <!-- Line (not shown after last item) -->
+            {i < experience.length - 1 && (
+              <div class="flex-1 w-px mt-1" style="background: var(--color-border); min-height: 60px;"></div>
+            )}
+          </div>
+
+          <!-- RIGHT: content -->
+          <div class={`flex-1 pb-12 ${i === experience.length - 1 ? 'pb-0' : ''}`}>
+            <!-- Mobile date (shown on small screens only) -->
+            <div class="md:hidden mb-2">
+              <span
+                class="text-xs font-medium"
+                style={`font-family: 'JetBrains Mono', monospace; color: ${item.periodColor === 'orange' ? 'var(--color-orange)' : 'var(--color-muted)'};`}
+              >
+                {item.period}
+              </span>
+              <span class="text-xs ml-2" style="color: var(--color-muted);">{item.location}</span>
+            </div>
+
+            <div class="flex items-center gap-2 flex-wrap mt-0.5 mb-3">
+              {item.companyUrl ? (
+                <a
+                  href={item.companyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="company-link inline-flex items-center gap-1 text-sm font-semibold"
+                  style="color: var(--color-fg);"
+                >
+                  {item.company}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </a>
+              ) : (
+                <span class="text-sm font-semibold" style="color: var(--color-fg);">{item.company}</span>
+              )}
+              <!-- Employment type badge -->
+              <span class="text-xs px-2 py-0.5 rounded-full font-medium" style={`
+                font-family: 'JetBrains Mono', monospace;
+                ${item.type === 'Full-time'  ? 'background: rgba(16,185,129,0.12); color: #10b981; border: 1px solid rgba(16,185,129,0.25);' : ''}
+                ${item.type === 'Freelance'  ? 'background: rgba(249,115,22,0.12); color: var(--color-orange); border: 1px solid rgba(249,115,22,0.25);' : ''}
+                ${item.type === 'Contract'   ? 'background: rgba(99,102,241,0.12); color: #818cf8; border: 1px solid rgba(99,102,241,0.25);' : ''}
+              `}>{item.type}</span>
+            </div>
+            <h3 class="font-medium text-base leading-tight -mt-2 mb-3" style="color: var(--color-muted);">{item.role}</h3>
+
+            {item.description && (
+              <p class="text-sm leading-relaxed mb-4" style="color: var(--color-muted); line-height: 1.6;">{item.description}</p>
+            )}
+
+            <!-- Project bullets (entry 2 style) -->
+            {item.projects && item.projects.length > 0 && (
+              <div class="space-y-4 mb-4">
+                {item.projects.map(proj => (
+                  <div>
+                    <div class="flex items-center gap-1.5 mb-0.5">
+                      {proj.slug ? (
+                        <a
+                          href={`/projects/${proj.slug}`}
+                          class="project-link inline-flex items-center gap-1 text-sm font-semibold"
+                          style="color: var(--color-fg);"
+                        >
+                          {proj.title}
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                      ) : (
+                        <span class="text-sm font-semibold" style="color: var(--color-fg);">{proj.title}</span>
+                      )}
+                    </div>
+                    {proj.period && (
+                      <p class="text-xs mb-1" style="color: var(--color-orange); font-family: 'JetBrains Mono', monospace;">{proj.period}</p>
+                    )}
+                    <p class="text-xs leading-relaxed" style="color: var(--color-muted);">{proj.desc}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <!-- Tech tags -->
+            {item.tags && item.tags.length > 0 && (
+              <div class="flex flex-wrap gap-1.5">
+                {item.tags.map(tag => (
+                  <span class="text-xs px-2.5 py-0.5 rounded-full font-medium" style="border: 1px solid var(--color-border); color: var(--color-muted);">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&display=swap');
+
+  .company-link {
+    transition: opacity 0.15s ease;
+  }
+  .company-link:hover {
+    opacity: 0.75;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .project-link {
+    transition: color 0.15s ease;
+  }
+  .project-link:hover {
+    color: var(--color-teal) !important;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>

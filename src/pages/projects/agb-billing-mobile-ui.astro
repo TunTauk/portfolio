@@ -1,0 +1,214 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { getAdjacentProjects } from '../../data/projects';
+
+const { prev, next } = getAdjacentProjects('agb-billing-mobile-ui');
+
+const screens = [
+  { label: "Login",                 desc: "Secure credential-based login as the app entry point - no onboarding flow" },
+  { label: "Home & Quick Pay",      desc: "Landing screen with a Quick Pay shortcut and a menu for navigating key sections" },
+  { label: "Invoice Detail",        desc: "Full invoice breakdown with itemised charges and payment options" },
+  { label: "Payment Screen",        desc: "Multi-method payment with confirmation and receipt summary" },
+  { label: "Billing History",       desc: "Filterable transaction and invoice history list" },
+  { label: "Account Settings",      desc: "Profile management and user preferences" },
+];
+
+const process = [
+  { step: "01", title: "System Conception",     desc: "With no prior system to reference, independently defined the full product concept from scratch - identifying what a mobile billing app should do, who would use it and what key journeys it needed to support." },
+  { step: "02", title: "Information Architecture", desc: "Mapped out screen hierarchy and navigation flows covering onboarding, billing, payments, history and account management." },
+  { step: "03", title: "High-fidelity Design",  desc: "Applied Material Design 2 guidelines - colour system, typography scale, elevation and component library - to produce pixel-perfect mockups." },
+];
+---
+
+<BaseLayout title="AGB Billing Mobile UI - Tun Tauk" description="High-fidelity Figma prototype for a mobile billing application following Material Design guidelines.">
+  <Navbar />
+
+  <main style="padding-top: 64px; background: var(--color-bg);">
+
+    <!-- Hero -->
+    <div class="relative overflow-hidden" style="background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%); padding: clamp(4rem, 10vw, 8rem) 0;">
+      <!-- Grid pattern -->
+      <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+      <div class="container relative">
+        <a href="/#projects" class="inline-flex items-center gap-2 text-sm mb-8 transition-colors" style="color: rgba(255,255,255,0.5);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back to Portfolio
+        </a>
+
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+          <div class="flex-1">
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="text-xs px-3 py-1 rounded-full font-medium" style="background: rgba(99,102,241,0.2); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.3);">UI/UX Design</span>
+              <span class="text-xs px-3 py-1 rounded-full font-medium" style="background: rgba(99,102,241,0.2); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.3);">Figma</span>
+              <span class="text-xs px-3 py-1 rounded-full font-medium" style="background: rgba(99,102,241,0.2); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.3);">Material Design</span>
+            </div>
+
+            <h1 class="font-extrabold text-white mb-4" style="font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1;">
+              AGB Billing<br/>Mobile UI
+            </h1>
+            <p class="text-base leading-relaxed mb-6" style="color: rgba(255,255,255,0.6); max-width: 520px;">
+              High-fidelity Figma prototype for a mobile billing application. Login-based access with a Quick Pay home screen, invoice management and payment flows. Designed during a short-term contract at AGB Communication Co., Ltd., following Material Design 3 guidelines.
+            </p>
+
+            <!-- Meta row -->
+            <div class="flex flex-wrap gap-6 text-sm" style="color: rgba(255,255,255,0.5);">
+              <div>
+                <span class="block text-xs uppercase tracking-widest mb-0.5" style="color: rgba(255,255,255,0.3);">Duration</span>
+                Oct – Dec 2021
+              </div>
+              <div>
+                <span class="block text-xs uppercase tracking-widest mb-0.5" style="color: rgba(255,255,255,0.3);">Company</span>
+                AGB Communication Co., Ltd.
+              </div>
+              <div>
+                <span class="block text-xs uppercase tracking-widest mb-0.5" style="color: rgba(255,255,255,0.3);">Role</span>
+                UI/UX Designer
+              </div>
+            </div>
+          </div>
+
+          <!-- Phone mockup placeholder -->
+          <div class="flex gap-4 items-end shrink-0">
+            {[0,1,2].map((i) => (
+              <div
+                class="rounded-2xl overflow-hidden shrink-0"
+                style={`
+                  width: ${i === 1 ? '130px' : '110px'};
+                  height: ${i === 1 ? '260px' : '220px'};
+                  background: linear-gradient(160deg, rgba(99,102,241,0.25) 0%, rgba(30,27,75,0.8) 100%);
+                  border: 1px solid rgba(99,102,241,0.3);
+                  display: flex; align-items: center; justify-content: center;
+                  transform: ${i === 0 ? 'rotate(-4deg)' : i === 2 ? 'rotate(4deg)' : 'rotate(0)'};
+                `}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(99,102,241,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="container py-16 space-y-20">
+
+      <!-- Overview -->
+      <section>
+        <h2 class="text-xl font-bold mb-3" style="color: var(--color-fg);">Overview</h2>
+        <div class="w-10 h-0.5 mb-6" style="background: var(--color-teal);"></div>
+        <div class="grid lg:grid-cols-3 gap-8">
+          <p class="lg:col-span-2 text-base leading-relaxed" style="color: var(--color-muted);">
+            Independently conceived and designed a mobile billing application from the ground up during a short-term contract at AGB Communication Co., Ltd. With no existing system to reference, defined the full system flow, user journeys and information architecture from scratch. Translated those flows into high-fidelity Figma prototypes following Material Design 3 guidelines - covering payment screens, billing history, invoice detail views and account management. Focused on mobile-first design, thumb-friendly navigation and a clean, consistent visual language.
+          </p>
+          <div class="space-y-4">
+            {[
+              { label: "Tool",      value: "Figma" },
+              { label: "Standard", value: "Material Design 3" },
+              { label: "Type",      value: "Mobile Application" },
+              { label: "Contract", value: "Short-term" },
+            ].map(item => (
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-widest mb-0.5" style="color: var(--color-muted);">{item.label}</p>
+                <p class="text-sm font-medium" style="color: var(--color-fg);">{item.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Features -->
+      <section>
+        <h2 class="text-xl font-bold mb-3" style="color: var(--color-fg);">Key Features</h2>
+        <div class="w-10 h-0.5 mb-6" style="background: var(--color-teal);"></div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { icon: "📱", title: "Mobile-first Design",    desc: "Thumb-friendly tap targets and minimal navigation depth optimised for one-hand use." },
+            { icon: "🎨", title: "Material Design 3",      desc: "Google's MD3 component library - colour tokens, typography scale and elevation system." },
+            { icon: "🗺️", title: "User Flows",            desc: "End-to-end flows from login → Quick Pay home → invoice view → payment and account settings." },
+            { icon: "✏️", title: "High-fidelity Frames",  desc: "Pixel-perfect mockups with interactive prototype links for stakeholder review." },
+          ].map(f => (
+            <div class="card p-5">
+              <div class="text-2xl mb-3">{f.icon}</div>
+              <h3 class="font-semibold text-sm mb-1.5" style="color: var(--color-fg);">{f.title}</h3>
+              <p class="text-xs leading-relaxed" style="color: var(--color-muted);">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Screen Coverage -->
+      <section>
+        <h2 class="text-xl font-bold mb-3" style="color: var(--color-fg);">Screen Coverage</h2>
+        <div class="w-10 h-0.5 mb-6" style="background: var(--color-teal);"></div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {screens.map((s, i) => (
+            <div class="card p-5 flex gap-4 items-start">
+              <div class="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold font-mono" style="background: rgba(99,102,241,0.12); color: #818cf8;">
+                {String(i + 1).padStart(2, '0')}
+              </div>
+              <div>
+                <h3 class="font-semibold text-sm mb-0.5" style="color: var(--color-fg);">{s.label}</h3>
+                <p class="text-xs" style="color: var(--color-muted);">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Design Process -->
+      <section>
+        <h2 class="text-xl font-bold mb-3" style="color: var(--color-fg);">Design Process</h2>
+        <div class="w-10 h-0.5 mb-8" style="background: var(--color-teal);"></div>
+        <div class="space-y-0">
+          {process.map((p, i) => (
+            <div class="flex gap-6 group">
+              <!-- Step line -->
+              <div class="flex flex-col items-center shrink-0">
+                <div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold font-mono shrink-0" style="background: rgba(99,102,241,0.15); color: #818cf8; border: 1px solid rgba(99,102,241,0.3);">
+                  {p.step}
+                </div>
+                {i < process.length - 1 && (
+                  <div class="w-px flex-1 my-2" style="background: var(--color-border);"></div>
+                )}
+              </div>
+              <!-- Content -->
+              <div class={`pb-8 ${i === process.length - 1 ? '' : ''}`}>
+                <h3 class="font-semibold text-sm mb-1.5" style="color: var(--color-fg);">{p.title}</h3>
+                <p class="text-sm leading-relaxed" style="color: var(--color-muted);">{p.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Prev / Next -->
+      <nav class="flex items-center justify-between pt-8" style="border-top: 1px solid var(--color-border);">
+        {prev ? (
+          <a href={`/projects/${prev.slug}`} class="flex items-center gap-2 group" style="color: var(--color-muted);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-1 transition-transform"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            <div>
+              <div class="text-xs uppercase tracking-wider mb-0.5">Previous</div>
+              <div class="text-sm font-semibold group-hover:underline" style="color: var(--color-fg);">{prev.title}</div>
+            </div>
+          </a>
+        ) : <div />}
+
+        {next ? (
+          <a href={`/projects/${next.slug}`} class="flex items-center gap-2 text-right group" style="color: var(--color-muted);">
+            <div>
+              <div class="text-xs uppercase tracking-wider mb-0.5">Next</div>
+              <div class="text-sm font-semibold group-hover:underline" style="color: var(--color-fg);">{next.title}</div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        ) : <div />}
+      </nav>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

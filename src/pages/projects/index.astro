@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar     from '../../components/Navbar.astro';
+import Footer     from '../../components/Footer.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { projects } from '../../data/projects';
+---
+
+<BaseLayout title="All Projects - Tun Tauk" description="All projects built by Tun Tauk - full-stack web apps, mobile apps, and SaaS platforms.">
+  <Navbar />
+  <main style="padding-top: 64px; min-height: 100vh; background: var(--color-bg);">
+    <div class="container py-20">
+      <div class="mb-16">
+        <a href="/" class="inline-flex items-center gap-2 text-sm mb-8" style="color: var(--color-muted);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back to home
+        </a>
+        <p class="section-label">All Work</p>
+        <h1 class="section-title">All Projects</h1>
+        <div class="section-divider mt-3"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map(project => (
+          <div class="reveal">
+            <ProjectCard project={project} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }),
+    { threshold: 0.1 }
+  );
+  revealEls.forEach(el => io.observe(el));
+</script>

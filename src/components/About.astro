@@ -1,0 +1,401 @@
+---
+
+---
+
+<section id="about" class="py-24" style="background: var(--color-bg);">
+  <div class="container">
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <p
+        class="reveal"
+        style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-orange);"
+      >
+        About Me
+      </p>
+      <h2 class="section-title reveal">Get to know me</h2>
+      <div
+        class="reveal mx-auto mt-3"
+        style="width: 60px; height: 3px; background: var(--color-orange); border-radius: 2px;"
+      >
+      </div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-16 items-center">
+      <!-- Left: Two flip cards -->
+      <div
+        class="reveal shrink-0 flex justify-center"
+        style="width: 100%; max-width: 400px;"
+      >
+        <!-- Hint text -->
+        <div>
+          <!-- Cards container -->
+          <div
+            id="cards-container"
+            style="position: relative; width: 280px; height: 340px;"
+          >
+            <!-- ── Card A (profile2.png) - starts on top ── -->
+            <div
+              id="card-a"
+              style="position: absolute; width: 220px; height: 280px; cursor: pointer; z-index: 2;"
+            >
+              <div
+                id="flipper-a"
+                style="width: 100%; height: 100%; transform-style: preserve-3d; perspective: 1000px; transition: transform 0.7s cubic-bezier(0.4,0.2,0.2,1);"
+              >
+                <!-- Front A: profile2.png -->
+                <div
+                  style="position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 16px; overflow: hidden; border: 3px solid rgba(255,255,255,0.18); box-shadow: 0 20px 40px rgba(0,0,0,0.4);"
+                >
+                  <!-- Tape -->
+                  <div
+                    style="position: absolute; width: 56px; height: 18px; left: 50%; top: -7px; transform: translateX(-50%) rotate(-1deg); background: rgba(245,158,11,0.4); border-radius: 3px; z-index: 10;"
+                  >
+                  </div>
+                  <img
+                    src="/images/profile-2.jpg"
+                    alt="Tun Tauk"
+                    style="width: 100%; height: 100%; object-fit: cover; object-position: top;"
+                  />
+                  <!-- Icon badge -->
+                  <div
+                    id="icon-a"
+                    style="position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; border-radius: 50%; background: rgba(15,15,15,0.75); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; z-index: 20; pointer-events: none;"
+                  >
+                    <svg
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="rgba(255,255,255,0.85)"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      ><path
+                        d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"
+                      ></path><path d="M21 3v5h-5"></path><path
+                        d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"
+                      ></path><path d="M8 16H3v5"></path></svg
+                    >
+                  </div>
+                </div>
+                <!-- Back A: code card -->
+                <div
+                  style="position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; transform: rotateY(180deg); border-radius: 16px; background: #0f1117; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 20px 40px rgba(0,0,0,0.5); display: flex; flex-direction: column; justify-content: center; padding: 1.5rem 1.5rem 0.75rem;"
+                >
+                  <!-- Mac dots -->
+                  <div style="display: flex; gap: 6px; margin-bottom: 1.2rem;">
+                    <span
+                      style="width: 12px; height: 12px; border-radius: 50%; background: #ff5f57; display: block;"
+                    ></span>
+                    <span
+                      style="width: 12px; height: 12px; border-radius: 50%; background: #febc2e; display: block;"
+                    ></span>
+                    <span
+                      style="width: 12px; height: 12px; border-radius: 50%; background: #28c840; display: block;"
+                    ></span>
+                  </div>
+                  <div
+                    style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; line-height: 1.9;"
+                  >
+                    <div>
+                      <span style="color:#c678dd;">const</span>
+                      <span style="color:#61afef;">me</span>
+                      <span style="color:#abb2bf;"> = &#123;</span>
+                    </div>
+                    <div>
+                      &nbsp;&nbsp;<span style="color:#e06c75;">name</span><span
+                        style="color:#abb2bf;">:</span
+                      >
+                      <span style="color:#98c379;">"Tun Tauk"</span><span
+                        style="color:#abb2bf;">,</span
+                      >
+                    </div>
+                    <div>
+                      &nbsp;&nbsp;<span style="color:#e06c75;">role</span><span
+                        style="color:#abb2bf;">:</span
+                      >
+                      <span style="color:#98c379;">"Full Stack Eng"</span><span
+                        style="color:#abb2bf;">,</span
+                      >
+                    </div>
+                    <div>
+                      &nbsp;&nbsp;<span style="color:#e06c75;">coffee</span
+                      ><span style="color:#abb2bf;">:</span>
+                      <span style="color:#d19a66;">Infinity</span><span
+                        style="color:#abb2bf;">,</span
+                      >
+                    </div>
+                    <div>
+                      &nbsp;&nbsp;<span style="color:#e06c75;">bugs</span><span
+                        style="color:#abb2bf;">:</span
+                      >
+                      <span style="color:#d19a66;">0</span><span
+                        style="color:#abb2bf;">,</span
+                      >
+                    </div>
+                    <div><span style="color:#abb2bf;">&#125;;</span></div>
+                    <div style="margin-top: 0.5rem;">
+                      <span style="color:#5c6370;">// click to flip back</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Card B (profile.png) - starts behind ── -->
+            <div
+              id="card-b"
+              style="position: absolute; width: 220px; height: 280px; cursor: pointer; z-index: 1;"
+            >
+              <div
+                id="flipper-b"
+                style="width: 100%; height: 100%; transform-style: preserve-3d; perspective: 1000px; transition: transform 0.7s cubic-bezier(0.4,0.2,0.2,1);"
+              >
+                <!-- Front B: profile.png -->
+                <div
+                  style="position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 16px; overflow: hidden; border: 3px solid rgba(255,255,255,0.12); box-shadow: 0 20px 40px rgba(0,0,0,0.4);"
+                >
+                  <img
+                    src="/images/profile.jpg"
+                    alt="Tun Tauk"
+                    style="width: 100%; height: 100%; object-fit: cover; object-position: top;"
+                  />
+                  <!-- Icon badge -->
+                  <div
+                    id="icon-b"
+                    style="position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; border-radius: 50%; background: rgba(15,15,15,0.75); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; z-index: 20; pointer-events: none;"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="rgba(255,255,255,0.85)"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      ><path d="M21 7H3"></path><path d="m15 1 6 6-6 6"
+                      ></path><path d="M3 17h18"></path><path d="m9 11-6 6 6 6"
+                      ></path></svg
+                    >
+                  </div>
+                </div>
+                <!-- Back B: whoami terminal -->
+                <div
+                  style="position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; transform: rotateY(180deg); border-radius: 16px; background: #0d1117; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 20px 40px rgba(0,0,0,0.5); display: flex; flex-direction: column; justify-content: center; padding: 1.5rem;"
+                >
+                  <div style="display: flex; gap: 6px; margin-bottom: 1.4rem;">
+                    <span
+                      style="width: 12px; height: 12px; border-radius: 50%; background: #ff5f57; display: block;"
+                    ></span>
+                    <span
+                      style="width: 12px; height: 12px; border-radius: 50%; background: #febc2e; display: block;"
+                    ></span>
+                    <span
+                      style="width: 12px; height: 12px; border-radius: 50%; background: #28c840; display: block;"
+                    ></span>
+                  </div>
+                  <div
+                    style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; line-height: 2;"
+                  >
+                    <div>
+                      <span style="color:#10b981;">$</span>
+                      <span style="color:#e2e8f0;">whoami</span>
+                    </div>
+                    <div style="color:#94a3b8;">→ Full Stack Engineer</div>
+                    <div style="margin-top: 0.3rem;">
+                      <span style="color:#10b981;">$</span>
+                      <span style="color:#e2e8f0;">cat interests.txt</span>
+                    </div>
+                    <div style="color:#94a3b8;">→ Competitive Programming</div>
+                    <div style="color:#94a3b8;">→ System Design</div>
+                    <div style="color:#94a3b8;">→ Coffee-driven dev</div>
+                    <div style="margin-top: 0.3rem;">
+                      <span style="color:#10b981;">$</span>
+                      <span style="color:#e2e8f0;">echo $status</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 6px;">
+                      <span style="color:#94a3b8;">→ Open to opportunities</span
+                      >
+                      <span
+                        style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #10b981; box-shadow: 0 0 6px #10b981;"
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Bio text -->
+      <div class="reveal flex-1">
+        <div
+          class="space-y-5 text-lg leading-relaxed"
+          style="line-height: 1.8;"
+        >
+          <p style="color: var(--color-fg);">
+            I'm a Full Stack Engineer currently living in Bangkok,
+            Thailand, with ~5 years of experience building production web and
+            mobile applications.
+          </p>
+          <p style="color: var(--color-muted);">
+            I specialise in <strong style="color: var(--color-fg);">
+              React.js, Next.js, Laravel, and TypeScript
+            </strong> - crafting everything from POS, E-commerce platforms, to personal
+            branding websites. I'm also very passionate in competitive programming,
+            always eager to solve complex problems.
+          </p>
+          <p style="color: var(--color-muted);">
+            Currently working at
+            <a
+              href="https://oneterrace.jp/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="color: var(--color-fg); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--color-orange);"
+            >
+              One Terrace (Tokyo)
+            </a> building scalable systems, and pursuing my CS degree at
+            <a
+              href="https://www.rsu.ac.th"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="color: var(--color-fg); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--color-orange);"
+            >
+              Rangsit University
+            </a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { animate } from "motion";
+
+  // ── Positions ──────────────────────────────────────
+  const POS_FRONT = { rotate: -5, x: -22, y: -6 }; // top-left tilt
+  const POS_BACK = { rotate: 6, x: 30, y: 10 }; // bottom-right tilt
+
+  const cardA = document.getElementById("card-a") as HTMLElement;
+  const cardB = document.getElementById("card-b") as HTMLElement;
+  const flipperA = document.getElementById("flipper-a") as HTMLElement;
+  const flipperB = document.getElementById("flipper-b") as HTMLElement;
+  const iconA = document.getElementById("icon-a") as HTMLElement;
+  const iconB = document.getElementById("icon-b") as HTMLElement;
+  const container = document.getElementById("cards-container") as HTMLElement;
+
+  const SVG_FLIP = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>`;
+  const SVG_SWAP = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7H3"/><path d="m15 1 6 6-6 6"/><path d="M3 17h18"/><path d="m9 11-6 6 6 6"/></svg>`;
+
+  function updateIcons() {
+    // top card gets flip icon, back card gets swap icon
+    iconA.innerHTML = aOnTop ? SVG_FLIP : SVG_SWAP;
+    iconB.innerHTML = aOnTop ? SVG_SWAP : SVG_FLIP;
+  }
+
+  if (!cardA || !cardB) throw new Error("cards not found");
+
+  // ── State ──────────────────────────────────────────
+  let aOnTop = true; // card A starts on top
+  let aFlipped = false;
+  let bFlipped = false;
+  let swapping = false;
+
+  // ── Set initial positions (instant) ───────────────
+  animate(cardA, { ...POS_FRONT }, { duration: 0 });
+  animate(cardB, { ...POS_BACK }, { duration: 0 });
+  updateIcons();
+
+  // ── Helpers ────────────────────────────────────────
+  const FLIP_OPT = {
+    duration: 0.25,
+    easing: [0.4, 0.2, 0.2, 1] as [number, number, number, number],
+  };
+  const SWAP_OPT = {
+    duration: 0.5,
+    easing: [0.34, 1.56, 0.64, 1] as [number, number, number, number],
+  };
+
+  function flipCard(flipper: HTMLElement, flipped: boolean) {
+    animate(flipper, { rotateY: flipped ? 180 : 0 }, FLIP_OPT);
+  }
+
+  function swapPositions() {
+    if (swapping) return;
+    swapping = true;
+
+    if (aOnTop) {
+      // A goes back, B comes front
+      cardB.style.zIndex = "2";
+      cardA.style.zIndex = "1";
+      animate(cardA, { ...POS_BACK }, SWAP_OPT);
+      animate(cardB, { ...POS_FRONT }, SWAP_OPT).then(() => {
+        aOnTop = false;
+        swapping = false;
+        updateIcons();
+      });
+    } else {
+      // B goes back, A comes front
+      cardA.style.zIndex = "2";
+      cardB.style.zIndex = "1";
+      animate(cardB, { ...POS_BACK }, SWAP_OPT);
+      animate(cardA, { ...POS_FRONT }, SWAP_OPT).then(() => {
+        aOnTop = true;
+        swapping = false;
+        updateIcons();
+      });
+    }
+  }
+
+  // ── Click: Card A ──────────────────────────────────
+  cardA.addEventListener("click", () => {
+    if (aOnTop) {
+      // Top card - toggle flip
+      aFlipped = !aFlipped;
+      flipCard(flipperA, aFlipped);
+    } else {
+      // Back card - always swappable
+      swapPositions();
+    }
+  });
+
+  // ── Click: Card B ──────────────────────────────────
+  cardB.addEventListener("click", () => {
+    if (!aOnTop) {
+      // Top card - toggle flip
+      bFlipped = !bFlipped;
+      flipCard(flipperB, bFlipped);
+    } else {
+      // Back card - always swappable
+      swapPositions();
+    }
+  });
+
+  // ── Scroll trigger: flip top card once ────────────
+  let scrollTriggered = false;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !scrollTriggered) {
+          scrollTriggered = true;
+          setTimeout(() => {
+            if (aOnTop && !aFlipped) {
+              aFlipped = true;
+              flipCard(flipperA, true);
+            } else if (!aOnTop && !bFlipped) {
+              bFlipped = true;
+              flipCard(flipperB, true);
+            }
+          }, 300);
+          observer.disconnect();
+        }
+      });
+    },
+    { threshold: 0.55 },
+  );
+
+  observer.observe(container);
+</script>

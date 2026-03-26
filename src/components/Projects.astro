@@ -1,0 +1,29 @@
+---
+import { featuredProjects } from '../data/projects';
+import ProjectCard from './ProjectCard.astro';
+---
+
+<section id="projects" class="py-24" style="background: var(--color-bg);">
+  <div class="container">
+    <div class="text-center mb-16">
+      <p class="section-label reveal">Projects</p>
+      <h2 class="section-title reveal">Things I've built</h2>
+      <div class="section-divider mx-auto reveal"></div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+      {featuredProjects.map((project) => (
+        <div class="project-card-wrapper reveal flex flex-col">
+          <ProjectCard project={project} />
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-12 reveal">
+      <a href="/projects" class="btn-teal-outline">
+        View All Projects
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>

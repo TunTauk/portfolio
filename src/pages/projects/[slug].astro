@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar     from '../../components/Navbar.astro';
+import Footer     from '../../components/Footer.astro';
+import { projects, getProjectBySlug, getAdjacentProjects } from '../../data/projects';
+
+export function getStaticPaths() {
+  return projects.map(p => ({ params: { slug: p.slug } }));
+}
+
+const { slug } = Astro.params;
+const project  = getProjectBySlug(slug!)!;
+const { prev, next } = getAdjacentProjects(slug!);
+---
+
+<BaseLayout
+  title={`${project.title} - Tun Tauk`}
+  description={project.description}
+  image={project.heroImage}
+>
+  <Navbar />
+
+  <!-- Mobile sticky CTA bar -->
+  {(project.liveUrl || project.sourceUrl) && (
+    <div class="lg:hidden fixed bottom-0 left-0 right-0 z-50 flex gap-3 p-3" style="background: var(--color-bg); border-top: 1px solid var(--color-border); backdrop-filter: blur(12px);">
+      {project.sourceUrl && (
+        <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" class="btn-outline flex-1 text-sm py-2.5 justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          Source Code
+        </a>
+      )}
+      {project.liveUrl && (
+        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="btn-orange flex-1 text-sm py-2.5 justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Live Demo
+        </a>
+      )}
+    </div>
+  )}
+
+  <main style="padding-top: 64px; background: var(--color-bg);">
+
+    <!-- Body -->
+    <div class="container pt-10 lg:pb-16 pb-24">
+
+      <!-- Back link -->
+      <a
+        href="/#projects"
+        class="inline-flex items-center gap-2 text-sm font-medium mb-6 transition-colors"
+        style="color: var(--color-muted);"
+        onmouseover="this.style.color='var(--color-orange)'" onmouseout="this.style.color='var(--color-muted)'"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to Portfolio
+      </a>
+
+      <!-- Title banner - spans full container width, natural image ratio -->
+      <div class="w-full overflow-hidden rounded-2xl mb-5" style="border: 1px solid var(--color-border);">
+        <img
+          src={project.heroImage}
+          alt={project.title}
+          class="w-full h-auto block"
+        />
+      </div>
+
+      <!-- Title outside image -->
+      <h1 class="font-extrabold leading-tight mb-8" style="font-size: clamp(1.5rem, 3.5vw, 2.4rem); color: var(--color-fg);">
+        {project.title}
+      </h1>
+
+      <div class="flex flex-col lg:flex-row gap-12">
+
+        <!-- Sidebar -->
+        <aside class="lg:w-72 shrink-0">
+          <div class="card p-6 space-y-5 lg:sticky lg:top-24">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest mb-1" style="color: var(--color-muted);">Category</p>
+              <p class="text-sm font-medium" style="color: var(--color-fg);">{project.category}</p>
+            </div>
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest mb-1" style="color: var(--color-muted);">Date</p>
+              <p class="text-sm font-medium" style="color: var(--color-fg);">{project.date}</p>
+            </div>
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest mb-2" style="color: var(--color-muted);">Tech Stack</p>
+              <div class="flex flex-wrap gap-1.5">
+                {project.tech.map(t => (
+                  <span class="text-xs px-2.5 py-1 rounded-full font-medium" style="background: rgba(249,115,22,0.1); color: var(--color-orange); border: 1px solid rgba(249,115,22,0.25);">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2 pt-2">
+              {project.sourceUrl && (
+                <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" class="btn-outline text-sm py-2 justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  Source Code
+                </a>
+              )}
+              {project.liveUrl && (
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="btn-orange text-sm py-2 justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Live Demo
+                </a>
+              )}
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main content -->
+        <div class="flex-1 min-w-0 space-y-12">
+          <!-- Overview -->
+          <div>
+            <h2 class="text-xl font-bold mb-4" style="color: var(--color-fg);">Overview</h2>
+            <div class="w-10 h-0.5 mb-5" style="background: var(--color-teal);"></div>
+            <p class="text-base leading-relaxed" style="color: var(--color-muted);">{project.description}</p>
+          </div>
+
+          <!-- Key Features -->
+          <div>
+            <h2 class="text-xl font-bold mb-4" style="color: var(--color-fg);">Key Features</h2>
+            <div class="w-10 h-0.5 mb-6" style="background: var(--color-teal);"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {project.features.map(f => (
+                <div class="card p-5 flex gap-4 items-start">
+                  <div class="text-2xl shrink-0">{f.icon}</div>
+                  <div>
+                    <h3 class="font-semibold text-sm mb-1" style="color: var(--color-fg);">{f.title}</h3>
+                    <p class="text-xs leading-relaxed" style="color: var(--color-muted);">{f.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- System Architecture / Screenshot -->
+          {project.architectureImage && (
+            <div>
+              <h2 class="text-xl font-bold mb-4" style="color: var(--color-fg);">System Architecture</h2>
+              <div class="w-10 h-0.5 mb-6" style="background: var(--color-teal);"></div>
+              <div class="rounded-2xl overflow-hidden" style="border: 1px solid var(--color-border);">
+                <img
+                  src={project.architectureImage}
+                  alt={`${project.title} architecture`}
+                  class="w-full object-cover"
+                />
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <!-- Prev / Next navigation -->
+      <nav class="flex items-center justify-between mt-16 pt-8" style="border-top: 1px solid var(--color-border);">
+        {prev ? (
+          <a href={`/projects/${prev.slug}`} class="flex items-center gap-2 group" style="color: var(--color-muted);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-1 transition-transform"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            <div>
+              <div class="text-xs uppercase tracking-wider mb-0.5">Previous Project</div>
+              <div class="text-sm font-semibold group-hover:underline" style="color: var(--color-fg);">{prev.title}</div>
+            </div>
+          </a>
+        ) : <div />}
+
+        {next ? (
+          <a href={`/projects/${next.slug}`} class="flex items-center gap-2 text-right group" style="color: var(--color-muted);">
+            <div>
+              <div class="text-xs uppercase tracking-wider mb-0.5">Next Project</div>
+              <div class="text-sm font-semibold group-hover:underline" style="color: var(--color-fg);">{next.title}</div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        ) : <div />}
+      </nav>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

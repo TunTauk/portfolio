@@ -1,0 +1,216 @@
+@import "tailwindcss";
+
+/* ── Tailwind v4 dark-mode via .dark class ── */
+@variant dark (&:where(.dark, .dark *));
+
+/* ── Design tokens ── */
+@theme {
+  --color-bg: #fafafa;
+  --color-bg-card: #ffffff;
+  --color-fg: #0a0a0a;
+  --color-muted: #737373;
+  --color-border: #e5e5e5;
+  --color-orange: #ea580c;
+  --color-orange-light: #f97316;
+  --color-teal: #059669;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --animate-fade-in: fade-in 0.6s ease forwards;
+  --animate-slide-up: slide-up 0.6s ease forwards;
+}
+
+/* Light mode defaults */
+:root {
+  --hero-icon-bg: #ffffff;
+  --nextjs-icon-color: #000000;
+}
+
+/* Dark mode token overrides */
+.dark {
+  --color-bg: #0a0a0a;
+  --color-bg-card: #171717;
+  --color-fg: #fafafa;
+  --color-muted: #a3a3a3;
+  --color-border: rgba(255,255,255,0.1);
+  --color-orange: #f97316;
+  --color-orange-light: #fb923c;
+  --color-teal: #10b981;
+  --hero-icon-bg: #171717;
+  --nextjs-icon-color: #ffffff;
+}
+
+/* Next.js icon adapts to theme */
+.nextjs-icon { color: var(--nextjs-icon-color) !important; }
+
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-muted); }
+
+/* ── Keyframes ── */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(var(--rotate, 0deg)); }
+  50%       { transform: translateY(-8px) rotate(var(--rotate, 0deg)); }
+}
+
+/* ── Utilities ── */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-teal);
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-fg);
+  margin-top: 0.5rem;
+}
+
+.section-divider {
+  width: 48px;
+  height: 3px;
+  background: var(--color-teal);
+  margin-top: 0.75rem;
+  border-radius: 2px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .container { padding-left: 5rem; padding-right: 5rem; }
+}
+
+/* ── Card ── */
+.card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--color-orange);
+  box-shadow: 0 8px 32px rgba(249, 115, 22, 0.12);
+}
+
+/* ── Btn ── */
+.btn-orange {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  background: var(--color-orange);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+.btn-orange:hover { background: var(--color-orange-light); transform: translateY(-1px); }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  background: transparent;
+  color: var(--color-fg);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--color-border);
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+.btn-outline:hover { border-color: var(--color-orange); color: var(--color-orange); transform: translateY(-1px); }
+
+.btn-teal-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.75rem;
+  background: transparent;
+  color: var(--color-teal);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 2rem;
+  border: 2px solid var(--color-teal);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+.btn-teal-outline:hover { background: var(--color-teal); color: #fff; transform: translateY(-1px); }
+
+/* ── Tech badge ── */
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.4rem 0.85rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-fg);
+  transition: border-color 0.2s ease;
+}
+.tech-badge:hover { border-color: var(--color-orange); }
+
+/* ── Animate on scroll (initial hidden state) ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

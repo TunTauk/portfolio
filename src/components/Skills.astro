@@ -1,0 +1,110 @@
+---
+import { Icon } from 'astro-icon/components';
+import { skillCategories } from '../data/skills';
+---
+
+<section id="skills" class="py-24" style="background: var(--color-bg-card); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+  <div class="container text-center">
+    <p
+      class="reveal"
+      style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-teal);"
+    >
+      Skills
+    </p>
+    <h2 class="section-title reveal">Technologies I work with</h2>
+    <div class="reveal mx-auto mt-3 mb-12" style="width: 60px; height: 3px; background: var(--color-teal); border-radius: 2px;"></div>
+
+    <div class="space-y-10">
+      {skillCategories.map(category => (
+        <div class="reveal">
+          <p class="text-sm font-semibold mb-5 uppercase tracking-widest" style="color: var(--color-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;">
+            {category.label}
+          </p>
+          <div class="flex flex-wrap justify-center gap-3">
+            {category.skills.map(skill => (
+              <div class="skill-pill flex items-center gap-2.5">
+                {skill.icon ? (
+                  <Icon
+                    name={`simple-icons:${skill.icon}`}
+                    class={`skill-icon${skill.lightColor ? ' has-light-color' : ''}`}
+                    style={`width: 18px; height: 18px; flex-shrink: 0; color: ${skill.color}; ${skill.lightColor ? `--light-color: ${skill.lightColor};` : ''}`}
+                  />
+                ) : (
+                  <span
+                    class="skill-fallback-letter"
+                    style={`background: ${skill.fallbackBg ?? 'var(--color-teal)'};`}
+                  >{skill.fallbackLetter}</span>
+                )}
+                <span class="text-sm font-medium" style="color: var(--color-fg);">{skill.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .skill-pill {
+    padding: 10px 18px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    cursor: default;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+  }
+
+  :root:not(.dark) .skill-pill {
+    background: #ffffff;
+    border-color: #e5e5e5;
+  }
+
+  .skill-pill:hover,
+  .skill-pill.touch-active {
+    border-color: var(--color-teal);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-teal) 18%, transparent);
+    transform: translateY(-2px);
+  }
+
+  /* brand colors set inline - just add brightness boost on hover */
+  .skill-icon {
+    transition: filter 0.2s ease, color 0.2s ease;
+  }
+
+  /* Next.js / Express: use dark icon in light mode */
+  :root:not(.dark) .skill-icon.has-light-color {
+    color: var(--light-color) !important;
+  }
+
+  .skill-pill:hover .skill-icon,
+  .skill-pill.touch-active .skill-icon {
+    filter: brightness(1.25);
+  }
+
+  .skill-fallback-letter {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background: var(--color-teal);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.skill-pill').forEach(pill => {
+    pill.addEventListener('touchstart', () => {
+      pill.classList.add('touch-active');
+    }, { passive: true });
+    pill.addEventListener('touchend', () => {
+      setTimeout(() => pill.classList.remove('touch-active'), 600);
+    }, { passive: true });
+  });
+</script>

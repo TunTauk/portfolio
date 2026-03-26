@@ -1,0 +1,142 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const floatingIcons = [
+  { icon: "simple-icons:react",      color: "#61DAFB", label: "React",      top: "13%", left: "26%",  size: "2.6rem", mobileSize: "1.8rem", delay: 0    },
+  { icon: "simple-icons:nextdotjs",  color: "#000000", lightColor: "#000000", label: "Next.js", top: "13%", left: "68%", size: "2.4rem", mobileSize: "1.7rem", delay: 0.4 },
+  { icon: "simple-icons:astro",      color: "#FF5D01", label: "Astro",      top: "46%", left: "3%",   size: "2.4rem", mobileSize: "1.7rem", delay: 0.8  },
+  { icon: "simple-icons:tailwindcss",color: "#06B6D4", label: "Tailwind",   top: "82%", left: "66%",  size: "2.5rem", mobileSize: "1.8rem", delay: 0.2  },
+  { icon: "simple-icons:typescript", color: "#3178C6", label: "TypeScript", top: "36%", left: "92%",  size: "2.3rem", mobileSize: "1.6rem", delay: 1.0  },
+  { icon: "simple-icons:php",        color: "#777BB4", label: "PHP",        top: "82%", left: "26%",  size: "2.3rem", mobileSize: "1.6rem", delay: 0.6  },
+  { icon: "simple-icons:laravel",    color: "#FF2D20", label: "Laravel",    top: "28%", left: "4%",   size: "2.2rem", mobileSize: "1.6rem", delay: 1.2  },
+  { icon: "simple-icons:amazonaws",  color: "#FF9900", label: "AWS",        top: "60%", left: "90%",  size: "2.4rem", mobileSize: "1.7rem", delay: 0.3  },
+];
+---
+
+<section
+  id="hero"
+  class="relative min-h-screen flex items-center justify-center overflow-hidden"
+  style="background: var(--color-bg);"
+>
+  <!-- Background grid pattern -->
+  <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: linear-gradient(var(--color-fg) 1px, transparent 1px), linear-gradient(90deg, var(--color-fg) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+  <!-- Floating tech icons - visible on all screen sizes -->
+  {floatingIcons.map((item, i) => (
+    <div
+      class="tech-icon absolute flex items-center justify-center rounded-xl border select-none cursor-pointer"
+      data-delay={item.delay}
+      data-index={i}
+      style={`
+        top: ${item.top}; left: ${item.left};
+        width: clamp(${item.mobileSize}, 3.5vw, ${item.size});
+        height: clamp(${item.mobileSize}, 3.5vw, ${item.size});
+        background: var(--hero-icon-bg);
+        border-color: var(--color-border);
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        z-index: 20;
+      `}
+      title={item.label}
+    >
+      <Icon
+        name={item.icon}
+        class={item.lightColor ? 'nextjs-icon' : ''}
+        style={`width: 55%; height: 55%; color: ${item.color};`}
+      />
+    </div>
+  ))}
+
+  <!-- Main hero content -->
+  <div class="container text-center relative z-10">
+    <!-- Available badge -->
+    <div id="hero-badge" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium mb-6" style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); color: var(--color-teal);">
+      <span class="w-2 h-2 rounded-full animate-pulse" style="background: var(--color-teal);"></span>
+      Available for opportunities
+    </div>
+
+    <!-- Heading -->
+    <h1 id="hero-title" class="font-extrabold leading-tight mb-6" style="font-size: clamp(2.4rem, 6vw, 4.5rem); color: var(--color-fg);">
+      Full-Stack Engineer
+    </h1>
+
+    <!-- Bio -->
+    <p id="hero-bio" class="max-w-xl mx-auto text-base md:text-lg mb-10" style="color: var(--color-muted); line-height: 1.7;">
+      Hi, I'm <strong style="color: var(--color-fg);">Tun Tauk</strong>. I am a traveler of digital worlds, leaving behind a trail of code and creativity. With over 5 years of experience, I specialize in crafting seamless web applications.
+    </p>
+
+    <!-- CTAs -->
+    <div id="hero-cta" class="flex flex-wrap items-center justify-center gap-4">
+      <a href="#projects" class="btn-orange">
+        View Projects
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="/cv.pdf" class="btn-outline" download>
+        Download CV
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="mt-20 flex justify-center">
+      <a href="#about" aria-label="Scroll down" class="flex flex-col items-center gap-1 opacity-40 hover:opacity-70 transition-opacity">
+        <span class="text-xs tracking-widest uppercase" style="color: var(--color-muted); font-size: 0.65rem;">Scroll</span>
+        <div class="w-px h-8" style="background: linear-gradient(to bottom, var(--color-muted), transparent);"></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { animate, stagger } from 'motion';
+
+  // ── Hero text entrance ──
+  const els = ['#hero-badge', '#hero-title', '#hero-bio', '#hero-cta'].map(s => document.querySelector(s));
+  animate(
+    els.filter(Boolean) as Element[],
+    { opacity: [0, 1], y: [32, 0] },
+    { delay: stagger(0.15), duration: 0.7, easing: [0.25, 0.1, 0.25, 1] }
+  );
+
+  // ── Floating tech icons: float + hover/touch spin ──
+  const icons = document.querySelectorAll<HTMLElement>('.tech-icon');
+
+  icons.forEach((icon) => {
+    const delay  = parseFloat(icon.dataset.delay  ?? '0');
+    const index  = parseInt(icon.dataset.index ?? '0');
+
+    // Continuous float (JS-driven so it coexists with spin)
+    animate(
+      icon,
+      { y: [0, -(8 + (index % 3) * 3), 0] },
+      {
+        duration: 3.2 + (index % 4) * 0.45,
+        delay,
+        repeat: Infinity,
+        easing: 'ease-in-out',
+      }
+    );
+
+    let spinning = false;
+
+    const spin = () => {
+      if (spinning) return;
+      spinning = true;
+      animate(
+        icon,
+        { rotate: [0, 360], scale: [1, 1.2, 1] },
+        { duration: 0.55, easing: [0.34, 1.56, 0.64, 1] }
+      ).then(() => { spinning = false; });
+    };
+
+    // Desktop: hover
+    icon.addEventListener('mouseenter', spin);
+
+    // Mobile: touchstart
+    icon.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      spin();
+    }, { passive: false });
+  });
+</script>
