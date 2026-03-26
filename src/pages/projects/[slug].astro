@@ -6,7 +6,7 @@ import { projects, getProjectBySlug, getAdjacentProjects } from '../../data/proj
 
 export function getStaticPaths() {
   // Slugs with dedicated static pages — exclude from dynamic route
-  const staticSlugs = ['leetcode-solutions'];
+  const staticSlugs = ['leetcode-solutions', 'agb-billing-mobile-ui'];
   return projects
     .filter(p => !staticSlugs.includes(p.slug))
     .map(p => ({ params: { slug: p.slug } }));
