@@ -4,22 +4,42 @@
 
 <!-- ── Floating AI Chat Widget ─────────────────────────────── -->
 <div id="chat-widget-container">
-
   <!-- Chat modal -->
   <div id="chat-modal" role="dialog" aria-label="AI assistant chat">
     <!-- Header -->
     <div id="chat-header">
       <div style="display:flex; align-items:center; gap:0.5rem;">
         <div id="chat-avatar">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/>
-            <circle cx="9" cy="14" r="1"/><circle cx="15" cy="14" r="1"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"
+            ></path>
+            <circle cx="9" cy="14" r="1"></circle><circle cx="15" cy="14" r="1"
+            ></circle>
           </svg>
         </div>
         <div>
-          <div style="font-size:0.8125rem; font-weight:600; color:var(--color-fg);">Ask about Tun Tauk</div>
-          <div style="font-size:0.6875rem; color:var(--color-teal); display:flex; align-items:center; gap:0.25rem;">
-            <span style="width:6px;height:6px;border-radius:50%;background:var(--color-teal);display:inline-block;"></span>
+          <div
+            style="font-size:0.8125rem; font-weight:600; color:var(--color-fg);"
+          >
+            Ask about Tun Tauk
+          </div>
+          <div
+            style="font-size:0.6875rem; color:var(--color-teal); display:flex; align-items:center; gap:0.25rem;"
+          >
+            <span
+              style="width:6px;height:6px;border-radius:50%;background:var(--color-teal);display:inline-block;"
+            ></span>
             Online
           </div>
         </div>
@@ -29,8 +49,22 @@
         aria-label="Close chat"
         style="width:28px;height:28px;border-radius:50%;border:1px solid var(--color-border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--color-muted);"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line><line
+            x1="6"
+            y1="6"
+            x2="18"
+            y2="18"></line>
         </svg>
       </button>
     </div>
@@ -39,7 +73,10 @@
     <div id="chat-messages"></div>
 
     <!-- Typing indicator -->
-    <div id="chat-typing" style="display:none; padding:0 1rem 0.5rem; align-items:center; gap:0.25rem;">
+    <div
+      id="chat-typing"
+      style="display:none; padding:0 1rem 0.5rem; align-items:center; gap:0.25rem;"
+    >
       <span class="typing-dot"></span>
       <span class="typing-dot"></span>
       <span class="typing-dot"></span>
@@ -59,8 +96,19 @@
         aria-label="Send message"
         style="width:34px;height:34px;border-radius:50%;border:none;background:var(--color-orange);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="15"
+          height="15"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="22" y1="2" x2="11" y2="13"></line><polygon
+            points="22 2 15 22 11 13 2 9 22 2"></polygon>
         </svg>
       </button>
     </div>
@@ -69,50 +117,82 @@
   <!-- Floating action button -->
   <button id="chat-fab" aria-label="Open AI assistant" style="opacity:0;">
     <!-- Chat icon (default) -->
-    <svg id="fab-icon-chat" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-      <circle cx="9" cy="10" r="1" fill="white"/><circle cx="12" cy="10" r="1" fill="white"/><circle cx="15" cy="10" r="1" fill="white"/>
+    <svg
+      id="fab-icon-chat"
+      xmlns="http://www.w3.org/2000/svg"
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="white"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+      ></path>
+      <circle cx="9" cy="10" r="1" fill="white"></circle><circle
+        cx="12"
+        cy="10"
+        r="1"
+        fill="white"></circle><circle cx="15" cy="10" r="1" fill="white"
+      ></circle>
     </svg>
     <!-- X icon (shown when open) -->
-    <svg id="fab-icon-x" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="hidden">
-      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+    <svg
+      id="fab-icon-x"
+      xmlns="http://www.w3.org/2000/svg"
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="white"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="hidden"
+    >
+      <line x1="18" y1="6" x2="6" y2="18"></line><line
+        x1="6"
+        y1="6"
+        x2="18"
+        y2="18"></line>
     </svg>
   </button>
-
 </div>
 
 <script>
-  import { animate } from 'motion';
+  import { animate } from "motion";
 
   // ── Elements ────────────────────────────────────────────────
-  const fab        = document.getElementById('chat-fab')!;
-  const modal      = document.getElementById('chat-modal')!;
-  const closeBtn   = document.getElementById('chat-close')!;
-  const input      = document.getElementById('chat-input') as HTMLTextAreaElement;
-  const sendBtn    = document.getElementById('chat-send')! as HTMLButtonElement;
-  const messagesEl = document.getElementById('chat-messages')!;
-  const typingEl   = document.getElementById('chat-typing')!;
-  const fabChat    = document.getElementById('fab-icon-chat')!;
-  const fabX       = document.getElementById('fab-icon-x')!;
+  const fab = document.getElementById("chat-fab")!;
+  const modal = document.getElementById("chat-modal")!;
+  const closeBtn = document.getElementById("chat-close")!;
+  const input = document.getElementById("chat-input") as HTMLTextAreaElement;
+  const sendBtn = document.getElementById("chat-send")! as HTMLButtonElement;
+  const messagesEl = document.getElementById("chat-messages")!;
+  const typingEl = document.getElementById("chat-typing")!;
+  const fabChat = document.getElementById("fab-icon-chat")!;
+  const fabX = document.getElementById("fab-icon-x")!;
 
   // ── State ────────────────────────────────────────────────────
-  let isOpen    = false;
+  let isOpen = false;
   let isLoading = false;
-  let welcomed  = false;
+  let welcomed = false;
   const chatHistory: { role: string; content: string }[] = [];
 
   // ── Per-user rate limiting (localStorage) ────────────────────
-  const LIMIT     = 15;
+  const LIMIT = 15;
   const WINDOW_MS = 24 * 60 * 60 * 1000; // 24 hours
 
-  if (!localStorage.getItem('chat_uid')) {
-    localStorage.setItem('chat_uid', crypto.randomUUID());
+  if (!localStorage.getItem("chat_uid")) {
+    localStorage.setItem("chat_uid", crypto.randomUUID());
   }
 
   function checkRateLimit(): boolean {
-    const raw  = localStorage.getItem('chat_usage');
-    const now  = Date.now();
-    let usage  = raw ? JSON.parse(raw) : { count: 0, resetAt: now + WINDOW_MS };
+    const raw = localStorage.getItem("chat_usage");
+    const now = Date.now();
+    let usage = raw ? JSON.parse(raw) : { count: 0, resetAt: now + WINDOW_MS };
 
     if (now > usage.resetAt) {
       usage = { count: 0, resetAt: now + WINDOW_MS };
@@ -120,26 +200,41 @@
     if (usage.count >= LIMIT) return false;
 
     usage.count++;
-    localStorage.setItem('chat_usage', JSON.stringify(usage));
+    localStorage.setItem("chat_usage", JSON.stringify(usage));
     return true;
   }
 
   // ── Open / Close ─────────────────────────────────────────────
   function openChat() {
     isOpen = true;
-    modal.style.display = 'flex';
-    animate(modal, { opacity: [0, 1], y: [16, 0], scale: [0.96, 1] }, { duration: 0.25, easing: [0.34, 1.2, 0.64, 1] });
+    modal.style.display = "flex";
+    animate(
+      modal,
+      { opacity: [0, 1], y: [16, 0], scale: [0.96, 1] },
+      { duration: 0.25, ease: [0.34, 1.2, 0.64, 1] },
+    );
     // swap FAB icon: chat → X
-    animate(fabChat, { opacity: [1, 0], rotate: [0, -90], scale: [1, 0.5] }, { duration: 0.18 }).then(() => {
-      fabChat.classList.add('hidden');
-      fabX.classList.remove('hidden');
-      animate(fabX, { opacity: [0, 1], rotate: [90, 0], scale: [0.5, 1] }, { duration: 0.18 });
+    animate(
+      fabChat,
+      { opacity: [1, 0], rotate: [0, -90], scale: [1, 0.5] },
+      { duration: 0.18 },
+    ).then(() => {
+      fabChat.classList.add("hidden");
+      fabX.classList.remove("hidden");
+      animate(
+        fabX,
+        { opacity: [0, 1], rotate: [90, 0], scale: [0.5, 1] },
+        { duration: 0.18 },
+      );
     });
     // Welcome message on first open
     if (!welcomed) {
       welcomed = true;
       setTimeout(() => {
-        appendMessage('assistant', "Hi! I'm here to answer questions about Tun Tauk. Ask me about his experience, projects, or skills!");
+        appendMessage(
+          "assistant",
+          "Hi! I'm here to answer questions about Tun Tauk. Ask me about his experience, projects, or skills!",
+        );
       }, 280);
     }
     setTimeout(() => input.focus(), 300);
@@ -147,30 +242,45 @@
 
   function closeChat() {
     isOpen = false;
-    animate(modal, { opacity: [1, 0], y: [0, 16], scale: [1, 0.96] }, { duration: 0.2 }).then(() => {
-      modal.style.display = 'none';
+    animate(
+      modal,
+      { opacity: [1, 0], y: [0, 16], scale: [1, 0.96] },
+      { duration: 0.2 },
+    ).then(() => {
+      modal.style.display = "none";
     });
     // swap FAB icon: X → chat
-    animate(fabX, { opacity: [1, 0], rotate: [0, 90], scale: [1, 0.5] }, { duration: 0.18 }).then(() => {
-      fabX.classList.add('hidden');
-      fabChat.classList.remove('hidden');
-      animate(fabChat, { opacity: [0, 1], rotate: [-90, 0], scale: [0.5, 1] }, { duration: 0.18 });
+    animate(
+      fabX,
+      { opacity: [1, 0], rotate: [0, 90], scale: [1, 0.5] },
+      { duration: 0.18 },
+    ).then(() => {
+      fabX.classList.add("hidden");
+      fabChat.classList.remove("hidden");
+      animate(
+        fabChat,
+        { opacity: [0, 1], rotate: [-90, 0], scale: [0.5, 1] },
+        { duration: 0.18 },
+      );
     });
   }
 
-  fab.addEventListener('click', () => {
+  fab.addEventListener("click", () => {
     animate(fab, { scale: [1, 0.88, 1] }, { duration: 0.22 });
     isOpen ? closeChat() : openChat();
   });
-  closeBtn.addEventListener('click', closeChat);
+  closeBtn.addEventListener("click", closeChat);
 
   // ── Message helpers ──────────────────────────────────────────
-  function appendMessage(role: 'user' | 'assistant', html: string): HTMLElement {
-    const div = document.createElement('div');
-    div.className = 'chat-message';
+  function appendMessage(
+    role: "user" | "assistant",
+    html: string,
+  ): HTMLElement {
+    const div = document.createElement("div");
+    div.className = "chat-message";
     div.dataset.role = role;
-    const bubble = document.createElement('div');
-    bubble.className = 'message-bubble';
+    const bubble = document.createElement("div");
+    bubble.className = "message-bubble";
     bubble.innerHTML = html;
     div.appendChild(bubble);
     animate(div, { opacity: [0, 1], y: [8, 0] }, { duration: 0.2 });
@@ -190,55 +300,57 @@
 
     // Per-user rate limit check
     if (!checkRateLimit()) {
-      input.value = '';
-      appendMessage('user', escapeHtml(text));
-      appendMessage('assistant',
+      input.value = "";
+      appendMessage("user", escapeHtml(text));
+      appendMessage(
+        "assistant",
         `You are talking too much. Ask Tun Tauk directly! 😄<br><br>` +
-        `<div class="chat-social-links">` +
+          `<div class="chat-social-links">` +
           `<a href="mailto:tauktun628@gmail.com" target="_blank">✉ Email</a>` +
           `<a href="https://github.com/tuntauk" target="_blank">⌥ GitHub</a>` +
           `<a href="https://linkedin.com/in/tun-tauk" target="_blank">in LinkedIn</a>` +
-        `</div>`
+          `</div>`,
       );
       return;
     }
 
     // Optimistic UI
-    appendMessage('user', escapeHtml(text));
-    chatHistory.push({ role: 'user', content: text });
-    input.value = '';
-    input.style.height = 'auto';
+    appendMessage("user", escapeHtml(text));
+    chatHistory.push({ role: "user", content: text });
+    input.value = "";
+    input.style.height = "auto";
 
     isLoading = true;
     sendBtn.disabled = true;
-    typingEl.style.display = 'flex';
+    typingEl.style.display = "flex";
     scrollToBottom();
 
     // Create empty assistant bubble to stream into
-    const msgEl = appendMessage('assistant', '');
-    const bubble = msgEl.querySelector('.message-bubble')!;
-    let fullText = '';
+    const msgEl = appendMessage("assistant", "");
+    const bubble = msgEl.querySelector(".message-bubble")!;
+    let fullText = "";
 
     try {
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           message: text,
           history: chatHistory.slice(0, -1),
         }),
       });
 
-      typingEl.style.display = 'none';
+      typingEl.style.display = "none";
 
       // Global Groq rate limit
       if (res.status === 429) {
-        bubble.textContent = "It's my time to sleep 😴 Please come back tomorrow.";
+        bubble.textContent =
+          "It's my time to sleep 😴 Please come back tomorrow.";
         chatHistory.pop();
         return;
       }
 
-      if (!res.ok) throw new Error('server_error');
+      if (!res.ok) throw new Error("server_error");
 
       const reader = res.body!.getReader();
       const decoder = new TextDecoder();
@@ -246,24 +358,26 @@
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
-        const lines = decoder.decode(value, { stream: true }).split('\n');
+        const lines = decoder.decode(value, { stream: true }).split("\n");
         for (const line of lines) {
-          if (!line.startsWith('data: ')) continue;
+          if (!line.startsWith("data: ")) continue;
           const data = line.slice(6).trim();
-          if (data === '[DONE]') break;
+          if (data === "[DONE]") break;
           try {
             const { text: chunk } = JSON.parse(data) as { text: string };
             fullText += chunk;
             bubble.textContent = fullText;
             scrollToBottom();
-          } catch { /* skip malformed chunk */ }
+          } catch {
+            /* skip malformed chunk */
+          }
         }
       }
 
-      chatHistory.push({ role: 'assistant', content: fullText });
+      chatHistory.push({ role: "assistant", content: fullText });
     } catch {
-      typingEl.style.display = 'none';
-      bubble.textContent = 'Something went wrong. Please try again.';
+      typingEl.style.display = "none";
+      bubble.textContent = "Something went wrong. Please try again.";
       chatHistory.pop();
     } finally {
       isLoading = false;
@@ -273,27 +387,31 @@
 
   function escapeHtml(str: string): string {
     return str
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
   }
 
   // ── Input handlers ────────────────────────────────────────────
-  input.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       sendMessage();
     }
   });
-  sendBtn.addEventListener('click', sendMessage);
+  sendBtn.addEventListener("click", sendMessage);
 
-  input.addEventListener('input', () => {
-    input.style.height = 'auto';
-    input.style.height = Math.min(input.scrollHeight, 100) + 'px';
+  input.addEventListener("input", () => {
+    input.style.height = "auto";
+    input.style.height = Math.min(input.scrollHeight, 100) + "px";
   });
 
   // ── FAB entrance animation (after page loads) ─────────────────
-  animate(fab, { opacity: [0, 1], y: [20, 0] }, { delay: 1.5, duration: 0.5, easing: [0.25, 0.1, 0.25, 1] });
+  animate(
+    fab,
+    { opacity: [0, 1], y: [20, 0] },
+    { delay: 1.5, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
+  );
 </script>

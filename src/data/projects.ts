@@ -144,13 +144,34 @@ export const projects: Project[] = [
   // ── Non-featured (accessible via direct URL) ────────────────────────────
 
   {
+    slug: "leetcode-solutions",
+    title: "LeetCode Solutions",
+    shortDesc: "Not grinding numbers — solving with intent. A curated repo of clean, well-thought-out solutions by a competitive programmer.",
+    description:
+      "As a competitive programmer, I never stopped thinking algorithmically. This repository holds my LeetCode solutions — not a grind log, but a collection of problems I genuinely worked through. Each solution reflects how I approach algorithmic thinking: understanding the problem deeply before writing a single line. Browse the repo and see how I think.",
+    image: "/images/projects/leetcode-cover.svg",
+    heroImage: "/images/projects/leetcode-cover.svg",
+    category: "Competitive Programming",
+    date: "2022 – Present",
+    tech: ["Python", "Algorithms", "Data Structures"],
+    featured: false,
+    sourceUrl: "https://github.com/tuntauk/leetcode",
+    features: [
+      { icon: "🧠", title: "Algorithmic Thinking",  desc: "Each solution focuses on understanding the problem deeply before optimising for speed or memory." },
+      { icon: "📐", title: "Clean Code",             desc: "Readable, well-structured solutions — not just accepted submissions, but maintainable code." },
+      { icon: "🏆", title: "ICPC Background",        desc: "Competitive programming mindset shaped by ICPC participation and regional contest experience." },
+      { icon: "📚", title: "Pattern Recognition",    desc: "Problems grouped by patterns: sliding window, DP, graphs, backtracking, and more." },
+    ],
+  },
+
+  {
     slug: "nan-oo-store-pos",
     title: "Nan Oo Store POS",
     shortDesc: "Multi-channel POS & inventory management for retail/wholesale distribution.",
     description:
       "A full-featured multi-channel Point of Sale and Inventory Management system built for a retail/wholesale distribution chain in Myanmar. Handles sales transactions, stock levels, supplier management, and detailed financial reporting across multiple store locations.",
-    image: "/images/projects/retail-pos.png",
-    heroImage: "/images/projects/retail-store.png",
+    image: "/images/projects/nan-oo.png",
+    heroImage: "/images/projects/nan-oo.png",
     category: "Desktop / Web App",
     date: "Jun 2022 – Jan 2023",
     tech: ["React", "Express"],
@@ -161,50 +182,8 @@ export const projects: Project[] = [
       { icon: "📈", title: "Sales Reporting",        desc: "Daily, weekly, monthly reports with charts and CSV export." },
       { icon: "👥", title: "Supplier Management",    desc: "Purchase orders, supplier contacts, and payment tracking." },
     ],
-    architectureImage: "/images/projects/retail-real.png",
   },
 
-  {
-    slug: "momo-delivery-app",
-    title: "Momo Delivery App",
-    shortDesc: "Real-time delivery tracking with rider assignment and verification codes.",
-    description:
-      "A real-time food and parcel delivery application featuring live GPS rider tracking, automated rider assignment, delivery verification codes, push notifications, in-app chat, and an admin dashboard for dispatch management.",
-    image: "/images/projects/delivery-app.png",
-    heroImage: "/images/projects/gofetch.png",
-    category: "Mobile App",
-    date: "2022",
-    tech: ["Node.js", "MongoDB"],
-    featured: false,
-    features: [
-      { icon: "📍", title: "Live Tracking",          desc: "Real-time GPS map with rider location updates every 5 seconds." },
-      { icon: "🔔", title: "Push Notifications",     desc: "Order status updates at every delivery stage via FCM." },
-      { icon: "🔑", title: "Verification Codes",     desc: "OTP-based delivery confirmation to prevent fraud." },
-      { icon: "🚀", title: "Smart Dispatch",         desc: "Nearest-rider assignment algorithm minimising delivery time." },
-    ],
-    architectureImage: "/images/projects/swifttrack.png",
-  },
-
-  {
-    slug: "agb-billing-panel",
-    title: "AGB Billing Admin Panel",
-    shortDesc: "Admin panel for billing & payments with reusable React components.",
-    description:
-      "Developed a web-based admin panel for managing user billing and payment operations using React.js. Built reusable UI components and implemented responsive design for improved usability. Gained hands-on experience in frontend development, component-based architecture and team collaboration. Worked in an Agile environment while coordinating with backend teams.",
-    image: "/images/projects/billing-pro.png",
-    heroImage: "/images/projects/billing-admin.png",
-    category: "Web Application",
-    date: "Oct – Dec 2021",
-    tech: ["React.js", "Laravel"],
-    featured: false,
-    features: [
-      { icon: "💳", title: "Billing Management",    desc: "Manage user billing records and payment operations from a central panel." },
-      { icon: "🧩", title: "Component Library",     desc: "Reusable React components for rapid and consistent UI development." },
-      { icon: "📱", title: "Responsive Design",     desc: "Fully responsive layout optimised for desktop and tablet use." },
-      { icon: "🤝", title: "Agile Collaboration",   desc: "Coordinated with backend teams in an Agile sprint workflow." },
-    ],
-    architectureImage: "/images/projects/financier.png",
-  },
 ];
 
 export const featuredProjects = projects.filter(p => p.featured);

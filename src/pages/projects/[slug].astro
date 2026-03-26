@@ -4,8 +4,13 @@ import Navbar     from '../../components/Navbar.astro';
 import Footer     from '../../components/Footer.astro';
 import { projects, getProjectBySlug, getAdjacentProjects } from '../../data/projects';
 
+// Slugs with dedicated static pages — exclude from dynamic route
+const STATIC_SLUGS = ['leetcode-solutions'];
+
 export function getStaticPaths() {
-  return projects.map(p => ({ params: { slug: p.slug } }));
+  return projects
+    .filter(p => !STATIC_SLUGS.includes(p.slug))
+    .map(p => ({ params: { slug: p.slug } }));
 }
 
 const { slug } = Astro.params;

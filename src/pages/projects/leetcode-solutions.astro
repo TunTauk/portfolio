@@ -1,0 +1,362 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar     from '../../components/Navbar.astro';
+import Footer     from '../../components/Footer.astro';
+import { getAdjacentProjects } from '../../data/projects';
+
+const { prev, next } = getAdjacentProjects('leetcode-solutions');
+
+const GITHUB_URL  = 'https://github.com/tuntauk/leetcode';
+const LEETCODE_URL = 'https://leetcode.com/u/tuntauk/';
+const LC_USERNAME  = 'tuntauk';
+---
+
+<BaseLayout
+  title="LeetCode Solutions – Tun Tauk"
+  description="Not grinding numbers — solving with intent. A curated repo of clean LeetCode solutions by a competitive programmer."
+>
+  <Navbar />
+
+  <!-- Mobile sticky CTA -->
+  <div class="lg:hidden fixed bottom-0 left-0 right-0 z-50 flex gap-3 p-3"
+       style="background: var(--color-bg); border-top: 1px solid var(--color-border); backdrop-filter: blur(12px);">
+    <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer"
+       class="btn-outline flex-1 text-sm py-2.5 justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+      </svg>
+      View on GitHub
+    </a>
+    <a href={LEETCODE_URL} target="_blank" rel="noopener noreferrer"
+       class="btn-orange flex-1 text-sm py-2.5 justify-center">
+      LeetCode Profile
+    </a>
+  </div>
+
+  <main style="padding-top: 64px; background: var(--color-bg);">
+    <div class="container pt-10 lg:pb-16 pb-24">
+
+      <!-- Back link -->
+      <a href="/#projects"
+         class="inline-flex items-center gap-2 text-sm font-medium mb-6 transition-colors"
+         style="color: var(--color-muted);"
+         onmouseover="this.style.color='var(--color-orange)'"
+         onmouseout="this.style.color='var(--color-muted)'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+        </svg>
+        Back to Portfolio
+      </a>
+
+      <!-- Hero banner (CSS-based, no external image) -->
+      <div class="w-full rounded-2xl overflow-hidden mb-5 relative"
+           style="border: 1px solid var(--color-border); background: #0f172a; min-height: 220px;">
+        <!-- Grid pattern -->
+        <svg class="absolute inset-0 w-full h-full" style="opacity:0.4;" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="lc-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#lc-grid)"/>
+        </svg>
+        <!-- Glow -->
+        <div class="absolute inset-0" style="background: radial-gradient(ellipse at 50% 50%, rgba(249,115,22,0.12) 0%, transparent 70%);"></div>
+        <!-- Content -->
+        <div class="relative z-10 flex flex-col items-center justify-center text-center px-8 py-14 gap-4">
+          <span class="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full"
+                style="background: rgba(249,115,22,0.12); color: var(--color-orange); border: 1px solid rgba(249,115,22,0.3);">
+            Competitive Programming
+          </span>
+          <!-- LeetCode wordmark -->
+          <div class="flex items-center gap-3">
+            <!-- LeetCode L icon -->
+            <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="4" width="7" height="32" rx="3" fill="#f97316"/>
+              <rect x="4" y="29" width="24" height="7" rx="3" fill="#f97316"/>
+              <rect x="28" y="18" width="7" height="18" rx="3" fill="#f97316" opacity="0.5"/>
+            </svg>
+            <h1 class="font-extrabold text-white" style="font-size: clamp(1.6rem, 4vw, 2.6rem); letter-spacing: -0.5px;">
+              LeetCode Solutions
+            </h1>
+          </div>
+          <p class="text-sm max-w-lg" style="color: #94a3b8;">
+            Not grinding numbers — solving with intent.
+          </p>
+          <!-- Difficulty pills -->
+          <div class="flex gap-2 mt-1">
+            <span class="text-xs font-semibold px-3 py-1 rounded-full" style="background: rgba(34,197,94,0.15); color: #22c55e;">Easy</span>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full" style="background: rgba(234,179,8,0.15); color: #eab308;">Medium</span>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full" style="background: rgba(239,68,68,0.15); color: #ef4444;">Hard</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <h1 class="font-extrabold leading-tight mb-8" style="font-size: clamp(1.5rem, 3.5vw, 2.4rem); color: var(--color-fg);">
+        LeetCode Solutions
+      </h1>
+
+      <div class="flex flex-col lg:flex-row gap-12">
+
+        <!-- Sidebar -->
+        <aside class="lg:w-72 shrink-0">
+          <div class="card p-6 space-y-5 lg:sticky lg:top-24">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest mb-1" style="color: var(--color-muted);">Category</p>
+              <p class="text-sm font-medium" style="color: var(--color-fg);">Competitive Programming</p>
+            </div>
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest mb-1" style="color: var(--color-muted);">Active Since</p>
+              <p class="text-sm font-medium" style="color: var(--color-fg);">2022 – Present</p>
+            </div>
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest mb-2" style="color: var(--color-muted);">Languages</p>
+              <div class="flex flex-wrap gap-1.5">
+                {['Python', 'C++', 'Algorithms', 'Data Structures'].map(t => (
+                  <span class="text-xs px-2.5 py-1 rounded-full font-medium"
+                        style="background: rgba(249,115,22,0.1); color: var(--color-orange); border: 1px solid rgba(249,115,22,0.25);">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div class="flex flex-col gap-2 pt-2">
+              <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer"
+                 class="btn-outline text-sm py-2 justify-center hidden lg:flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+                View on GitHub
+              </a>
+              <a href={LEETCODE_URL} target="_blank" rel="noopener noreferrer"
+                 class="btn-orange text-sm py-2 justify-center hidden lg:flex">
+                LeetCode Profile →
+              </a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main content -->
+        <div class="flex-1 min-w-0 space-y-12">
+
+          <!-- Personal story -->
+          <div>
+            <h2 class="text-xl font-bold mb-4" style="color: var(--color-fg);">Overview</h2>
+            <div class="w-10 h-0.5 mb-5" style="background: var(--color-teal);"></div>
+            <div class="space-y-4 text-base leading-relaxed" style="color: var(--color-muted);">
+              <p>
+                As a competitive programmer who participated in <strong style="color: var(--color-fg);">ICPC</strong>, I never stopped thinking algorithmically. The habit of breaking down complex problems into elegant solutions is something I carry into every project I build.
+              </p>
+              <p>
+                I'm not grinding numbers. I don't chase streaks or leaderboard positions. Every problem I solve has a purpose — to sharpen a specific pattern, explore an edge case, or deeply understand a data structure I haven't fully internalised yet.
+              </p>
+              <p>
+                These aren't just accepted submissions. They're clean, well-thought-out approaches to classic and tricky problems — written to be read, not just run. Browse the repository and see how I think.
+              </p>
+            </div>
+          </div>
+
+          <!-- Live Stats -->
+          <div>
+            <h2 class="text-xl font-bold mb-4" style="color: var(--color-fg);">Live Stats</h2>
+            <div class="w-10 h-0.5 mb-6" style="background: var(--color-teal);"></div>
+
+            <!-- Loading skeleton -->
+            <div id="lc-skeleton" class="space-y-4">
+              <div class="rounded-xl h-28 animate-pulse" style="background: var(--color-bg-card); border: 1px solid var(--color-border);"></div>
+              <div class="grid grid-cols-3 gap-3">
+                <div class="rounded-xl h-20 animate-pulse" style="background: var(--color-bg-card); border: 1px solid var(--color-border);"></div>
+                <div class="rounded-xl h-20 animate-pulse" style="background: var(--color-bg-card); border: 1px solid var(--color-border);"></div>
+                <div class="rounded-xl h-20 animate-pulse" style="background: var(--color-bg-card); border: 1px solid var(--color-border);"></div>
+              </div>
+            </div>
+
+            <!-- Stats (hidden until loaded) -->
+            <div id="lc-stats" class="space-y-4" style="display:none;">
+              <!-- Total + Ranking row -->
+              <div class="card p-6 flex flex-wrap gap-6 items-center justify-between">
+                <div class="flex items-center gap-4">
+                  <div class="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0"
+                       style="background: rgba(249,115,22,0.12); border: 2px solid rgba(249,115,22,0.3);">
+                    <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="4" y="4" width="7" height="32" rx="3" fill="#f97316"/>
+                      <rect x="4" y="29" width="24" height="7" rx="3" fill="#f97316"/>
+                      <rect x="28" y="18" width="7" height="18" rx="3" fill="#f97316" opacity="0.6"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-xs font-semibold uppercase tracking-widest mb-0.5" style="color: var(--color-muted);">Total Solved</p>
+                    <p id="lc-total" class="text-4xl font-extrabold" style="color: var(--color-fg);">—</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="text-xs font-semibold uppercase tracking-widest mb-0.5" style="color: var(--color-muted);">Global Ranking</p>
+                  <p id="lc-rank" class="text-2xl font-bold" style="color: var(--color-orange);">—</p>
+                </div>
+              </div>
+
+              <!-- Progress bar -->
+              <div class="card p-5">
+                <div class="flex justify-between text-xs font-medium mb-2" style="color: var(--color-muted);">
+                  <span>Difficulty Breakdown</span>
+                  <span id="lc-bar-label">—</span>
+                </div>
+                <div class="h-2.5 rounded-full overflow-hidden flex gap-0.5" style="background: var(--color-border);">
+                  <div id="lc-bar-easy"   class="h-full rounded-l-full transition-all duration-700" style="background: #22c55e; width: 0%;"></div>
+                  <div id="lc-bar-medium" class="h-full transition-all duration-700"                 style="background: #eab308; width: 0%;"></div>
+                  <div id="lc-bar-hard"   class="h-full rounded-r-full transition-all duration-700" style="background: #ef4444; width: 0%;"></div>
+                </div>
+              </div>
+
+              <!-- Easy / Medium / Hard cards -->
+              <div class="grid grid-cols-3 gap-3">
+                <div class="card p-4 text-center">
+                  <p class="text-xs font-semibold uppercase tracking-widest mb-2" style="color: #22c55e;">Easy</p>
+                  <p id="lc-easy" class="text-2xl font-extrabold" style="color: var(--color-fg);">—</p>
+                </div>
+                <div class="card p-4 text-center">
+                  <p class="text-xs font-semibold uppercase tracking-widest mb-2" style="color: #eab308;">Medium</p>
+                  <p id="lc-medium" class="text-2xl font-extrabold" style="color: var(--color-fg);">—</p>
+                </div>
+                <div class="card p-4 text-center">
+                  <p class="text-xs font-semibold uppercase tracking-widest mb-2" style="color: #ef4444;">Hard</p>
+                  <p id="lc-hard" class="text-2xl font-extrabold" style="color: var(--color-fg);">—</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Error state -->
+            <div id="lc-error" style="display:none;"
+                 class="card p-5 text-sm text-center" style="color: var(--color-muted);">
+              Could not load live stats. <a href={LEETCODE_URL} target="_blank" style="color: var(--color-orange);">View on LeetCode →</a>
+            </div>
+          </div>
+
+          <!-- Features grid -->
+          <div>
+            <h2 class="text-xl font-bold mb-4" style="color: var(--color-fg);">What's in the Repo</h2>
+            <div class="w-10 h-0.5 mb-6" style="background: var(--color-teal);"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { icon: '🧠', title: 'Algorithmic Thinking',  desc: 'Each solution focuses on understanding the problem deeply before optimising for speed or memory.' },
+                { icon: '📐', title: 'Clean Code',            desc: 'Readable, well-structured solutions — not just accepted submissions, but maintainable code.' },
+                { icon: '🏆', title: 'ICPC Background',       desc: 'Competitive programming mindset shaped by ICPC participation and regional contest experience.' },
+                { icon: '📚', title: 'Pattern Recognition',   desc: 'Problems organised by patterns: sliding window, DP, graphs, backtracking, binary search, and more.' },
+              ].map(f => (
+                <div class="card p-5 flex gap-4 items-start">
+                  <div class="text-2xl shrink-0">{f.icon}</div>
+                  <div>
+                    <h3 class="font-semibold text-sm mb-1" style="color: var(--color-fg);">{f.title}</h3>
+                    <p class="text-xs leading-relaxed" style="color: var(--color-muted);">{f.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Prev / Next navigation -->
+      <nav class="flex items-center justify-between mt-16 pt-8" style="border-top: 1px solid var(--color-border);">
+        {prev ? (
+          <a href={`/projects/${prev.slug}`} class="flex items-center gap-2 group" style="color: var(--color-muted);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-1 transition-transform">
+              <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+            </svg>
+            <div>
+              <div class="text-xs uppercase tracking-wider mb-0.5">Previous Project</div>
+              <div class="text-sm font-semibold group-hover:underline" style="color: var(--color-fg);">{prev.title}</div>
+            </div>
+          </a>
+        ) : <div />}
+
+        {next ? (
+          <a href={`/projects/${next.slug}`} class="flex items-center gap-2 text-right group" style="color: var(--color-muted);">
+            <div>
+              <div class="text-xs uppercase tracking-wider mb-0.5">Next Project</div>
+              <div class="text-sm font-semibold group-hover:underline" style="color: var(--color-fg);">{next.title}</div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        ) : <div />}
+      </nav>
+
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script define:vars={{ LC_USERNAME }}>
+  const SOLVED_URL  = `https://alfa-leetcode-api.onrender.com/${LC_USERNAME}/solved`;
+  const PROFILE_URL = `https://alfa-leetcode-api.onrender.com/userProfile/${LC_USERNAME}`;
+
+  const skeleton = document.getElementById('lc-skeleton');
+  const statsEl  = document.getElementById('lc-stats');
+  const errorEl  = document.getElementById('lc-error');
+
+  function animateCount(el, target, duration = 800) {
+    const start = performance.now();
+    const update = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      el.textContent = Math.round(ease * target).toLocaleString();
+      if (progress < 1) requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+  }
+
+  async function loadStats() {
+    try {
+      const [solvedRes, profileRes] = await Promise.all([
+        fetch(SOLVED_URL),
+        fetch(PROFILE_URL),
+      ]);
+
+      if (!solvedRes.ok || !profileRes.ok) throw new Error('API error');
+
+      const solved  = await solvedRes.json();
+      const profile = await profileRes.json();
+
+      const total  = solved.solvedProblem  ?? 0;
+      const easy   = solved.easySolved     ?? 0;
+      const medium = solved.mediumSolved   ?? 0;
+      const hard   = solved.hardSolved     ?? 0;
+      const rank   = profile.ranking       ?? null;
+
+      // Show stats panel
+      skeleton.style.display = 'none';
+      statsEl.style.display  = 'block';
+
+      // Animate counts
+      animateCount(document.getElementById('lc-total'),  total);
+      animateCount(document.getElementById('lc-easy'),   easy);
+      animateCount(document.getElementById('lc-medium'), medium);
+      animateCount(document.getElementById('lc-hard'),   hard);
+
+      if (rank) {
+        document.getElementById('lc-rank').textContent = `#${rank.toLocaleString()}`;
+      } else {
+        document.getElementById('lc-rank').textContent = 'N/A';
+      }
+
+      // Progress bar
+      if (total > 0) {
+        document.getElementById('lc-bar-easy').style.width   = `${(easy   / total * 100).toFixed(1)}%`;
+        document.getElementById('lc-bar-medium').style.width = `${(medium / total * 100).toFixed(1)}%`;
+        document.getElementById('lc-bar-hard').style.width   = `${(hard   / total * 100).toFixed(1)}%`;
+        document.getElementById('lc-bar-label').textContent  = `${total} solved`;
+      }
+
+    } catch {
+      skeleton.style.display = 'none';
+      errorEl.style.display  = 'block';
+    }
+  }
+
+  loadStats();
+</script>

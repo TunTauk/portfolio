@@ -96,7 +96,7 @@ const floatingIcons = [
   animate(
     els.filter(Boolean) as Element[],
     { opacity: [0, 1], y: [32, 0] },
-    { delay: stagger(0.15), duration: 0.7, easing: [0.25, 0.1, 0.25, 1] }
+    { delay: stagger(0.15), duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }
   );
 
   // ── Floating tech icons: float + hover/touch spin ──
@@ -109,13 +109,13 @@ const floatingIcons = [
     // Continuous float (JS-driven so it coexists with spin)
     animate(
       icon,
-      { y: [0, -(8 + (index % 3) * 3), 0] },
+      { y: [0, -(8 + (index % 3) * 3), 0] } as any,
       {
         duration: 3.2 + (index % 4) * 0.45,
         delay,
         repeat: Infinity,
-        easing: 'ease-in-out',
-      }
+        ease: 'easeInOut',
+      } as any
     );
 
     let spinning = false;
@@ -126,7 +126,7 @@ const floatingIcons = [
       animate(
         icon,
         { rotate: [0, 360], scale: [1, 1.2, 1] },
-        { duration: 0.55, easing: [0.34, 1.56, 0.64, 1] }
+        { duration: 0.55, ease: [0.34, 1.56, 0.64, 1] }
       ).then(() => { spinning = false; });
     };
 
