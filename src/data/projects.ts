@@ -8,6 +8,7 @@ export interface Project {
   tech: string[];
   category: string;
   date: string;
+  company?: string;
   sourceUrl?: string;
   liveUrl?: string;
   featured: boolean;
@@ -16,40 +17,80 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  // ── 6 featured (displayed on homepage & projects page) ──────────────────
+  // ── Featured ──────────────────────────────────────────────────────────────
   {
-    slug: "forex-ib-marketing-platform",
-    title: "Forex IB Marketing & Education Platform",
+    slug: "koyou-assess",
+    title: "Koyou Assess - Employment Assessment System",
     shortDesc:
-      "Multi-language CMS with trader education, Q&A forum, performance board and admin panel.",
+      "Internal management system and customer app for foreign worker employment compliance assessments in Japan.",
     description:
-      "Designed and developed a multi-language (EN/MM) web platform for Forex IB marketing and trader education. The system includes a dynamic landing page with CMS-based content management, provider showcase and a structured tutorial system supporting both step-by-step learning modules and flexible content blocks. Implemented user authentication with admin approval, a moderated review system with featured display and a member-only Q&A forum. Built a performance board for showcasing trading proof through a gallery-based interface. Developed a centralized admin panel for managing content, users and platform interactions.",
-    image: "/images/projects/forex-ib.png",
-    heroImage: "/images/projects/forex-ib.png",
+      "Built the internal management system and customer-facing assessment application for Koyou Assess, a Japanese third-party service that evaluates companies' foreign worker employment practices for ESG and human rights due diligence compliance. The platform handles the full assessment lifecycle - from questionnaire submission and assessor scheduling through on-site inspection tracking and certification issuance.",
+    image: "/images/projects/assessment.png",
+    heroImage: "/images/projects/assessment.png",
     category: "Web Application",
-    date: "Mar 2026 – Present",
+    date: "Jul 2023 - Apr 2025",
+    company: "One Terrace",
+    tech: ["Laravel", "React.js", "MySQL"],
+    featured: true,
+    liveUrl: "https://koyouassess.jp/",
+    features: [
+      {
+        icon: "📋",
+        title: "Assessment Workflow",
+        desc: "End-to-end lifecycle management from questionnaire submission to inspection tracking and report delivery.",
+      },
+      {
+        icon: "🏅",
+        title: "Certification Management",
+        desc: "Manages compliance certification issuance and status across assessed organizations.",
+      },
+      {
+        icon: "👤",
+        title: "Customer App",
+        desc: "Dedicated customer-facing application for companies to submit and track their assessments.",
+      },
+      {
+        icon: "🖥️",
+        title: "Internal System",
+        desc: "Back-office management system for assessors to coordinate evaluations and generate reports.",
+      },
+    ],
+  },
+  {
+    slug: "suitup-777",
+    title: "Suitup 777",
+    liveUrl: "https://www.suitup777.com/",
+    shortDesc:
+      "CMS-driven tailor website with admin dashboard, online ordering and WhatsApp integration.",
+    description:
+      "Designed and developed a custom CMS-driven tailor website with an admin dashboard, enabling management of product catalogs, fabric inventories, media galleries, customer profiles, and order workflows. Implemented an online ordering system with appointment logic, status tracking, and WhatsApp integration for customer communication.",
+    image: "/images/projects/suitup-777.png",
+    heroImage: "/images/projects/suitup-777.png",
+    category: "Web Application",
+    date: "2024",
+    company: "Ideafresh",
     tech: ["Next.js", "MySQL"],
     featured: true,
     features: [
       {
-        icon: "🌍",
-        title: "Multi-language CMS",
-        desc: "EN/MM content management with dynamic landing pages and provider showcase.",
+        icon: "🧵",
+        title: "Product & Fabric CMS",
+        desc: "Manage product catalogs, fabric inventories and media galleries from one dashboard.",
       },
       {
-        icon: "📚",
-        title: "Tutorial System",
-        desc: "Step-by-step learning modules and flexible content blocks for trader education.",
+        icon: "🛒",
+        title: "Online Ordering",
+        desc: "Order system with appointment logic, status tracking and customer profiles.",
       },
       {
         icon: "💬",
-        title: "Member Q&A Forum",
-        desc: "Member-only forum with moderated review system and featured display.",
+        title: "WhatsApp Integration",
+        desc: "Automated customer communication via WhatsApp for order updates.",
       },
       {
-        icon: "📊",
-        title: "Performance Board",
-        desc: "Gallery-based interface for showcasing trading proof and results.",
+        icon: "🖼️",
+        title: "Media Gallery",
+        desc: "Rich media management for showcasing tailoring work and collections.",
       },
     ],
   },
@@ -66,6 +107,7 @@ export const projects: Project[] = [
     heroImage: "/images/projects/crossfit.png",
     category: "Web Application",
     date: "2022",
+    company: "Ideafresh",
     tech: ["React.js", "Express.js", "Laravel", "MySQL", "Sqlite"],
     featured: true,
     features: [
@@ -101,7 +143,8 @@ export const projects: Project[] = [
     image: "/images/projects/kyaw.png",
     heroImage: "/images/projects/kyaw.png",
     category: "Web Application",
-    date: "2021–2022",
+    date: "2021 - 2022",
+    company: "Ideafresh",
     tech: ["React.js", "Express.js", "MongoDB"],
     featured: true,
     features: [
@@ -128,42 +171,44 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "leetcode-solutions",
-    title: "LeetCode Solutions",
+    slug: "vidmoji",
+    title: "Vidmoji",
     shortDesc:
-      "Not grinding numbers — solving with intent. A curated repo of clean, well-thought-out solutions by a competitive programmer.",
+      "Real-time hand gesture detection that translates your movements into emojis for video meetings - no buttons, just gestures.",
     description:
-      "As a competitive programmer, I never stopped thinking algorithmically. This repository holds my LeetCode solutions — not a grind log, but a collection of problems I genuinely worked through. Each solution reflects how I approach algorithmic thinking: understanding the problem deeply before writing a single line. Browse the repo and see how I think.",
-    image: "/images/projects/leetcode-cover.svg",
-    heroImage: "/images/projects/leetcode-cover.svg",
-    category: "Competitive Programming",
-    date: "2022 – Present",
-    tech: ["Python", "Algorithms", "Data Structures"],
-    featured: false,
-    sourceUrl: "https://github.com/tuntauk/leetcode",
+      "Vidmoji is a real-time computer vision project that detects hand gestures through a webcam and overlays corresponding emojis on the video feed. Built with MediaPipe, OpenCV, and Pillow, it recognises five gestures per hand - from a closed fist to an 'I love you' sign - and maps them instantly to emoji. Designed for casual online video meetings where expressive, button-free interaction matters.",
+    image: "/images/projects/vidmoji-cover.svg",
+    heroImage: "/images/projects/vidmoji-cover.svg",
+    category: "Computer Vision",
+    date: "Aug 2025",
+    company: "Personal",
+    tech: ["Python", "MediaPipe", "OpenCV", "Pillow"],
+    featured: true,
+    sourceUrl: "https://github.com/tuntauk/vidmoji",
     features: [
       {
-        icon: "🧠",
-        title: "Algorithmic Thinking",
-        desc: "Each solution focuses on understanding the problem deeply before optimising for speed or memory.",
+        icon: "✋",
+        title: "Gesture Recognition",
+        desc: "Detects 5 hand gestures per hand in real time using MediaPipe's hand landmark model.",
       },
       {
-        icon: "📐",
-        title: "Clean Code",
-        desc: "Readable, well-structured solutions — not just accepted submissions, but maintainable code.",
+        icon: "😄",
+        title: "Emoji Overlay",
+        desc: "Maps recognised gestures to emojis and renders them directly onto the live video frame.",
       },
       {
-        icon: "🏆",
-        title: "ICPC Background",
-        desc: "Competitive programming mindset shaped by ICPC participation and regional contest experience.",
+        icon: "⚡",
+        title: "Low-latency Pipeline",
+        desc: "Configurable detection delay and display duration for smooth, responsive interaction.",
       },
       {
-        icon: "📚",
-        title: "Pattern Recognition",
-        desc: "Problems grouped by patterns: sliding window, DP, graphs, backtracking, and more.",
+        icon: "🎥",
+        title: "Video Meeting Ready",
+        desc: "Designed for casual online meetings - raise your hand, flash a peace sign, no button clicks needed.",
       },
     ],
   },
+
   {
     slug: "agb-billing-mobile-ui",
     title: "AGB Billing Mobile UI",
@@ -176,7 +221,8 @@ export const projects: Project[] = [
     image: "/images/projects/agb-billing-mobile-ui.png",
     heroImage: "/images/projects/billing-admin.png",
     category: "UI/UX Design",
-    date: "Oct – Dec 2021",
+    date: "Oct - Dec 2021",
+    company: "AGB Communication",
     tech: ["Figma", "Material Design"],
     featured: true,
     features: [
@@ -203,6 +249,47 @@ export const projects: Project[] = [
     ],
   },
 
+  // ── Non-featured (accessible via direct URL) ────────────────────────────
+
+  {
+    slug: "leetcode-solutions",
+    title: "LeetCode Solutions",
+    shortDesc:
+      "Not grinding numbers - solving with intent. A curated repo of clean, well-thought-out solutions by a competitive programmer.",
+    description:
+      "As a competitive programmer, I never stopped thinking algorithmically. This repository holds my LeetCode solutions - not a grind log, but a collection of problems I genuinely worked through. Each solution reflects how I approach algorithmic thinking: understanding the problem deeply before writing a single line. Browse the repo and see how I think.",
+    image: "/images/projects/leetcode-cover.svg",
+    heroImage: "/images/projects/leetcode-cover.svg",
+    category: "Competitive Programming",
+    date: "2022 - Present",
+    company: "Personal",
+    tech: ["Python", "Algorithms", "Data Structures"],
+    featured: false,
+    sourceUrl: "https://github.com/tuntauk/leetcode",
+    features: [
+      {
+        icon: "🧠",
+        title: "Algorithmic Thinking",
+        desc: "Each solution focuses on understanding the problem deeply before optimising for speed or memory.",
+      },
+      {
+        icon: "📐",
+        title: "Clean Code",
+        desc: "Readable, well-structured solutions - not just accepted submissions, but maintainable code.",
+      },
+      {
+        icon: "🏆",
+        title: "ICPC Background",
+        desc: "Competitive programming mindset shaped by ICPC participation and regional contest experience.",
+      },
+      {
+        icon: "📚",
+        title: "Pattern Recognition",
+        desc: "Problems grouped by patterns: sliding window, DP, graphs, backtracking, and more.",
+      },
+    ],
+  },
+
   {
     slug: "portfolio",
     title: "Personal Portfolio Website",
@@ -213,9 +300,10 @@ export const projects: Project[] = [
     image: "/images/projects/portfolio-cover.svg",
     heroImage: "/images/projects/portfolio-cover.svg",
     category: "Web Application",
-    date: "Mar 2026 – Present",
+    date: "Mar 2026 - Present",
+    company: "Personal",
     tech: ["Astro", "TypeScript", "Tailwind CSS", "Motion"],
-    featured: true,
+    featured: false,
     sourceUrl: "https://github.com/tuntauk/portfolio",
     liveUrl: "https://tt.ideafresh.dev",
     features: [
@@ -241,46 +329,83 @@ export const projects: Project[] = [
       },
     ],
   },
-
-  // ── Non-featured (accessible via direct URL) ────────────────────────────
+  {
+    slug: "zicolog",
+    title: "ZicoLog - Traffic Accident Visualization Platform",
+    shortDesc:
+      "Interactive map-based platform visualizing Japan traffic accident data with advanced filtering and cross-tabulation analysis.",
+    description:
+      "Developed a data visualization web platform for the Transportation Safety AI Laboratory that presents Japan's traffic accident records spanning 2019-2024. The system features an interactive map with location clustering, detailed incident data including weather, vehicle type, injury severity, and party-specific information. Supports advanced filtering across multiple dimensions and cross-tabulation analysis for safety research and policy decision-making.",
+    image: "/images/projects/zicolog.png",
+    heroImage: "/images/projects/zicolog.png",
+    category: "Web Application",
+    date: "May 2025 - Aug 2025",
+    company: "One Terrace",
+    tech: ["React.js", "Laravel", "MySQL", "Google Maps API"],
+    liveUrl: "https://zicolog.com/",
+    featured: false,
+    features: [
+      {
+        icon: "🗺️",
+        title: "Interactive Map",
+        desc: "Location-based clustering on Google Maps with street-level panoramic views of accident sites.",
+      },
+      {
+        icon: "🔍",
+        title: "Advanced Filtering",
+        desc: "Filter by age group, injury severity, time of day, accident type, and weather conditions.",
+      },
+      {
+        icon: "📊",
+        title: "Cross-tabulation Analysis",
+        desc: "Examine correlations between variables across 2019-2024 accident data for safety research.",
+      },
+      {
+        icon: "📋",
+        title: "Detailed Incident Data",
+        desc: "Comprehensive records covering party info, vehicle damage, collision points, and jurisdiction details.",
+      },
+    ],
+  },
 
   {
-    slug: "suitup-777",
-    title: "Suitup 777",
-    liveUrl: "https://www.suitup777.com/",
+    slug: "forex-ib-marketing-platform",
+    title: "Forex IB Marketing & Education Platform",
     shortDesc:
-      "CMS-driven tailor website with admin dashboard, online ordering and WhatsApp integration.",
+      "Multi-language CMS with trader education, Q&A forum, performance board and admin panel.",
     description:
-      "Designed and developed a custom CMS-driven tailor website with an admin dashboard, enabling management of product catalogs, fabric inventories, media galleries, customer profiles, and order workflows. Implemented an online ordering system with appointment logic, status tracking, and WhatsApp integration for customer communication.",
-    image: "/images/projects/suitup-777.png",
-    heroImage: "/images/projects/suitup-777.png",
+      "Designed and developed a multi-language (EN/MM) web platform for Forex IB marketing and trader education. The system includes a dynamic landing page with CMS-based content management, provider showcase and a structured tutorial system supporting both step-by-step learning modules and flexible content blocks. Implemented user authentication with admin approval, a moderated review system with featured display and a member-only Q&A forum. Built a performance board for showcasing trading proof through a gallery-based interface. Developed a centralized admin panel for managing content, users and platform interactions.",
+    image: "/images/projects/forex-ib.png",
+    heroImage: "/images/projects/forex-ib.png",
     category: "Web Application",
-    date: "2024",
+    date: "Mar 2026 - Present",
+    company: "Ideafresh",
     tech: ["Next.js", "MySQL"],
     featured: false,
     features: [
       {
-        icon: "🧵",
-        title: "Product & Fabric CMS",
-        desc: "Manage product catalogs, fabric inventories and media galleries from one dashboard.",
+        icon: "🌍",
+        title: "Multi-language CMS",
+        desc: "EN/MM content management with dynamic landing pages and provider showcase.",
       },
       {
-        icon: "🛒",
-        title: "Online Ordering",
-        desc: "Order system with appointment logic, status tracking and customer profiles.",
+        icon: "📚",
+        title: "Tutorial System",
+        desc: "Step-by-step learning modules and flexible content blocks for trader education.",
       },
       {
         icon: "💬",
-        title: "WhatsApp Integration",
-        desc: "Automated customer communication via WhatsApp for order updates.",
+        title: "Member Q&A Forum",
+        desc: "Member-only forum with moderated review system and featured display.",
       },
       {
-        icon: "🖼️",
-        title: "Media Gallery",
-        desc: "Rich media management for showcasing tailoring work and collections.",
+        icon: "📊",
+        title: "Performance Board",
+        desc: "Gallery-based interface for showcasing trading proof and results.",
       },
     ],
   },
+
   {
     slug: "umt-store",
     title: "UMT Store",
@@ -291,7 +416,8 @@ export const projects: Project[] = [
     image: "/images/projects/umt-pos.png",
     heroImage: "/images/projects/umt-pos.png",
     category: "Web Application",
-    date: "2020–2021",
+    date: "2020 - 2021",
+    company: "Ideafresh",
     tech: ["React", "Node.js", "MongoDB"],
     featured: false,
     features: [
@@ -317,43 +443,7 @@ export const projects: Project[] = [
       },
     ],
   },
-  {
-    slug: "vidmoji",
-    title: "Vidmoji",
-    shortDesc:
-      "Real-time hand gesture detection that translates your movements into emojis for video meetings — no buttons, just gestures.",
-    description:
-      "Vidmoji is a real-time computer vision project that detects hand gestures through a webcam and overlays corresponding emojis on the video feed. Built with MediaPipe, OpenCV, and Pillow, it recognises five gestures per hand — from a closed fist to an 'I love you' sign — and maps them instantly to emoji. Designed for casual online video meetings where expressive, button-free interaction matters.",
-    image: "/images/projects/vidmoji-cover.svg",
-    heroImage: "/images/projects/vidmoji-cover.svg",
-    category: "Computer Vision",
-    date: "May 2025",
-    tech: ["Python", "MediaPipe", "OpenCV", "Pillow"],
-    featured: true,
-    sourceUrl: "https://github.com/tuntauk/vidmoji",
-    features: [
-      {
-        icon: "✋",
-        title: "Gesture Recognition",
-        desc: "Detects 5 hand gestures per hand in real time using MediaPipe's hand landmark model.",
-      },
-      {
-        icon: "😄",
-        title: "Emoji Overlay",
-        desc: "Maps recognised gestures to emojis and renders them directly onto the live video frame.",
-      },
-      {
-        icon: "⚡",
-        title: "Low-latency Pipeline",
-        desc: "Configurable detection delay and display duration for smooth, responsive interaction.",
-      },
-      {
-        icon: "🎥",
-        title: "Video Meeting Ready",
-        desc: "Designed for casual online meetings — raise your hand, flash a peace sign, no button clicks needed.",
-      },
-    ],
-  },
+
   {
     slug: "nan-oo-store-pos",
     title: "Nan Oo Store POS",
@@ -364,7 +454,8 @@ export const projects: Project[] = [
     image: "/images/projects/nan-oo.png",
     heroImage: "/images/projects/nan-oo.png",
     category: "Desktop / Web App",
-    date: "Jun 2022 – Jan 2023",
+    date: "Jun 2022 - Jan 2023",
+    company: "Ideafresh",
     tech: ["React", "Express"],
     featured: false,
     features: [

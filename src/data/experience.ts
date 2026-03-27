@@ -1,6 +1,6 @@
 export interface ProjectBullet {
   title: string;
-  period?: string; // optional sub-period label e.g. "03/2026 – Present · Bangkok"
+  period?: string; // optional sub-period label e.g. "03/2026 - Present · Bangkok"
   desc: string;
   slug?: string; // links to /projects/{slug}
 }
@@ -20,7 +20,7 @@ export interface ExperienceItem {
 
 export const experience: ExperienceItem[] = [
   {
-    period: "Mar 2023 – Present",
+    period: "Mar 2023 - Present",
     periodColor: "orange",
     location: "Tokyo, Japan (Remote)",
     company: "One Terrace",
@@ -29,10 +29,14 @@ export const experience: ExperienceItem[] = [
     type: "Full-time",
     description:
       "Built full-stack apps with Laravel, Next.js, React, NestJS. Managed CI/CD pipelines, Docker configs, and AWS deployments.",
+    projects: [
+      { title: "Koyou Assess - Employment Assessment System", desc: "Internal management system and customer app for foreign worker employment compliance assessments in Japan.", slug: "koyou-assess" },
+      { title: "ZicoLog - Traffic Accident Visualization Platform", desc: "Interactive map-based platform visualizing Japan traffic accident data with filtering and cross-tabulation analysis.", slug: "zicolog" },
+    ],
     tags: ["Laravel", "Next.js", "AWS", "Docker", "MySQL"],
   },
   {
-    period: "2019 – Present",
+    period: "2019 - Present",
     periodColor: "orange",
     location: "Yangon, Myanmar (Remote)",
     company: "Ideafresh",
@@ -51,7 +55,7 @@ export const experience: ExperienceItem[] = [
     tags: ["React", "Node.js", "MongoDB", "Docker", "Laravel", "MySQL"],
   },
   {
-    period: "Oct – Dec 2021",
+    period: "Oct - Dec 2021",
     periodColor: "muted",
     location: "Yangon, Myanmar (Remote)",
     company: "AGB Communication Co., Ltd.",

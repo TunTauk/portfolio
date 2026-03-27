@@ -88,7 +88,7 @@ export const POST: APIRoute = async ({ request }) => {
         ReplyToAddresses: [email],
         Message: {
           Subject: {
-            Data: `[Portfolio] ${subject || 'New message'} — from ${name}`,
+            Data: `[Portfolio] ${subject || 'New message'} - from ${name}`,
             Charset: 'UTF-8',
           },
           Body: {
@@ -97,7 +97,7 @@ export const POST: APIRoute = async ({ request }) => {
               Data: [
                 `Name:    ${name}`,
                 `Email:   ${email}`,
-                `Subject: ${subject || '—'}`,
+                `Subject: ${subject || '-'}`,
                 ``,
                 `Message:`,
                 message,
@@ -111,7 +111,7 @@ export const POST: APIRoute = async ({ request }) => {
                   <table style="width:100%;border-collapse:collapse;font-size:14px;">
                     <tr><td style="padding:8px 0;color:#64748b;width:80px;">Name</td><td style="padding:8px 0;font-weight:600;">${name}</td></tr>
                     <tr><td style="padding:8px 0;color:#64748b;">Email</td><td style="padding:8px 0;"><a href="mailto:${email}" style="color:#f97316;">${email}</a></td></tr>
-                    <tr><td style="padding:8px 0;color:#64748b;">Subject</td><td style="padding:8px 0;">${subject || '—'}</td></tr>
+                    <tr><td style="padding:8px 0;color:#64748b;">Subject</td><td style="padding:8px 0;">${subject || '-'}</td></tr>
                   </table>
                   <hr style="border:none;border-top:1px solid #e2e8f0;margin:16px 0;">
                   <p style="font-size:14px;color:#374151;white-space:pre-wrap;">${message}</p>
@@ -141,7 +141,7 @@ export const POST: APIRoute = async ({ request }) => {
                 ``,
                 `Here's a copy of what you sent:`,
                 `──────────────────────────`,
-                `Subject: ${subject || '—'}`,
+                `Subject: ${subject || '-'}`,
                 ``,
                 message,
                 `──────────────────────────`,
@@ -163,7 +163,7 @@ export const POST: APIRoute = async ({ request }) => {
 
                   <p style="font-size:15px;color:#1e293b;margin:0 0 12px;">Hi <strong>${name}</strong>,</p>
                   <p style="font-size:14px;color:#475569;line-height:1.7;margin:0 0 24px;">
-                    Thanks for reaching out! I've received your message and will get back to you as soon as possible — usually within 1–2 business days.
+                    Thanks for reaching out! I've received your message and will get back to you as soon as possible - usually within 1-2 business days.
                   </p>
 
                   <!-- Message recap -->

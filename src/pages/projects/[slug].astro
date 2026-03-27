@@ -5,7 +5,7 @@ import Footer     from '../../components/Footer.astro';
 import { projects, getProjectBySlug, getAdjacentProjects } from '../../data/projects';
 
 export function getStaticPaths() {
-  // Slugs with dedicated static pages — exclude from dynamic route
+  // Slugs with dedicated static pages - exclude from dynamic route
   const staticSlugs = ['leetcode-solutions', 'agb-billing-mobile-ui'];
   return projects
     .filter(p => !staticSlugs.includes(p.slug))
@@ -15,6 +15,14 @@ export function getStaticPaths() {
 const { slug } = Astro.params;
 const project  = getProjectBySlug(slug!)!;
 const { prev, next } = getAdjacentProjects(slug!);
+
+const companyStyles: Record<string, string> = {
+  'One Terrace':       'background: rgba(16,185,129,0.12); color: var(--color-teal);  border: 1px solid rgba(16,185,129,0.3);',
+  'Ideafresh':         'background: rgba(249,115,22,0.12); color: var(--color-orange); border: 1px solid rgba(249,115,22,0.3);',
+  'AGB Communication': 'background: rgba(59,130,246,0.12); color: #3b82f6;             border: 1px solid rgba(59,130,246,0.3);',
+  'Personal':          'background: rgba(163,163,163,0.12); color: var(--color-muted); border: 1px solid rgba(163,163,163,0.25);',
+};
+const companyStyle = project.company ? (companyStyles[project.company] ?? companyStyles['Personal']) : '';
 ---
 
 <BaseLayout
@@ -81,6 +89,15 @@ const { prev, next } = getAdjacentProjects(slug!);
               <p class="text-xs font-semibold uppercase tracking-widest mb-1" style="color: var(--color-muted);">Category</p>
               <p class="text-sm font-medium" style="color: var(--color-fg);">{project.category}</p>
             </div>
+            {project.company && (
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-widest mb-2" style="color: var(--color-muted);">Company</p>
+                <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full" style={companyStyle}>
+                  <span class="w-1.5 h-1.5 rounded-full" style="background: currentColor;"></span>
+                  {project.company}
+                </span>
+              </div>
+            )}
             <div>
               <p class="text-xs font-semibold uppercase tracking-widest mb-1" style="color: var(--color-muted);">Date</p>
               <p class="text-sm font-medium" style="color: var(--color-fg);">{project.date}</p>
