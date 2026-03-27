@@ -16,6 +16,7 @@
     "@aws-sdk/client-ses": "^3.1017.0",
     "@iconify-json/simple-icons": "^1.2.75",
     "@tailwindcss/vite": "^4.2.2",
+    "@vercel/analytics": "^2.0.1",
     "astro": "^6.0.8",
     "astro-icon": "^1.1.5",
     "groq-sdk": "^1.1.2",

@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import ChatWidget from '../components/ChatWidget.astro';
+import Analytics from '@vercel/analytics/astro';
 
 interface Props {
   title?: string;
@@ -45,5 +46,6 @@ const {
   <body>
     <slot />
     <ChatWidget />
+    <Analytics />
   </body>
 </html>
