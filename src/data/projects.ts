@@ -53,43 +53,7 @@ export const projects: Project[] = [
       },
     ],
   },
-  {
-    slug: "suitup-777",
-    title: "Suitup 777",
-    liveUrl: "https://www.suitup777.com/",
-    shortDesc:
-      "CMS-driven tailor website with admin dashboard, online ordering and WhatsApp integration.",
-    description:
-      "Designed and developed a custom CMS-driven tailor website with an admin dashboard, enabling management of product catalogs, fabric inventories, media galleries, customer profiles, and order workflows. Implemented an online ordering system with appointment logic, status tracking, and WhatsApp integration for customer communication.",
-    image: "/images/projects/suitup-777.png",
-    heroImage: "/images/projects/suitup-777.png",
-    category: "Web Application",
-    date: "2024",
-    tech: ["Next.js", "MySQL"],
-    featured: true,
-    features: [
-      {
-        icon: "🧵",
-        title: "Product & Fabric CMS",
-        desc: "Manage product catalogs, fabric inventories and media galleries from one dashboard.",
-      },
-      {
-        icon: "🛒",
-        title: "Online Ordering",
-        desc: "Order system with appointment logic, status tracking and customer profiles.",
-      },
-      {
-        icon: "💬",
-        title: "WhatsApp Integration",
-        desc: "Automated customer communication via WhatsApp for order updates.",
-      },
-      {
-        icon: "🖼️",
-        title: "Media Gallery",
-        desc: "Rich media management for showcasing tailoring work and collections.",
-      },
-    ],
-  },
+
   {
     slug: "crossfit-gym-platform",
     title: "CrossFit Gym Platform",
@@ -239,8 +203,84 @@ export const projects: Project[] = [
     ],
   },
 
+  {
+    slug: "portfolio",
+    title: "Personal Portfolio Website",
+    shortDesc:
+      "Astro-powered portfolio with an AI chat assistant, animated sections, and dark/light theming.",
+    description:
+      "Designed and built a personal portfolio from scratch using Astro and TypeScript. The site features smooth scroll-driven animations powered by Motion, a fully responsive dark/light theme, and a project detail system with dynamic routing. Includes an embedded AI chat widget that lets visitors ask questions about experience, skills and projects in real time. Deployed on Vercel with a custom domain.",
+    image: "/images/projects/portfolio-cover.svg",
+    heroImage: "/images/projects/portfolio-cover.svg",
+    category: "Web Application",
+    date: "Mar 2026 – Present",
+    tech: ["Astro", "TypeScript", "Tailwind CSS", "Motion"],
+    featured: true,
+    sourceUrl: "https://github.com/tuntauk/portfolio",
+    liveUrl: "https://tt.ideafresh.dev",
+    features: [
+      {
+        icon: "🚀",
+        title: "Astro Static Site",
+        desc: "Zero-JS-by-default architecture with island components for fast page loads.",
+      },
+      {
+        icon: "🤖",
+        title: "AI Chat Assistant",
+        desc: "Embedded chat widget powered by Claude that answers visitor questions about Tun Tauk.",
+      },
+      {
+        icon: "✨",
+        title: "Scroll Animations",
+        desc: "Smooth entrance animations on every section using the Motion library.",
+      },
+      {
+        icon: "🌗",
+        title: "Dark / Light Theme",
+        desc: "Persisted theme toggle with animated icon transition and CSS variable theming.",
+      },
+    ],
+  },
+
   // ── Non-featured (accessible via direct URL) ────────────────────────────
 
+  {
+    slug: "suitup-777",
+    title: "Suitup 777",
+    liveUrl: "https://www.suitup777.com/",
+    shortDesc:
+      "CMS-driven tailor website with admin dashboard, online ordering and WhatsApp integration.",
+    description:
+      "Designed and developed a custom CMS-driven tailor website with an admin dashboard, enabling management of product catalogs, fabric inventories, media galleries, customer profiles, and order workflows. Implemented an online ordering system with appointment logic, status tracking, and WhatsApp integration for customer communication.",
+    image: "/images/projects/suitup-777.png",
+    heroImage: "/images/projects/suitup-777.png",
+    category: "Web Application",
+    date: "2024",
+    tech: ["Next.js", "MySQL"],
+    featured: false,
+    features: [
+      {
+        icon: "🧵",
+        title: "Product & Fabric CMS",
+        desc: "Manage product catalogs, fabric inventories and media galleries from one dashboard.",
+      },
+      {
+        icon: "🛒",
+        title: "Online Ordering",
+        desc: "Order system with appointment logic, status tracking and customer profiles.",
+      },
+      {
+        icon: "💬",
+        title: "WhatsApp Integration",
+        desc: "Automated customer communication via WhatsApp for order updates.",
+      },
+      {
+        icon: "🖼️",
+        title: "Media Gallery",
+        desc: "Rich media management for showcasing tailoring work and collections.",
+      },
+    ],
+  },
   {
     slug: "umt-store",
     title: "UMT Store",
