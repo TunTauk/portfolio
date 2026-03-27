@@ -215,15 +215,15 @@ export const projects: Project[] = [
     liveUrl:
       "https://play.google.com/store/apps/details?id=com.agb.customer.billing",
     shortDesc:
-      "High-fidelity Figma prototype for a mobile billing app following Material Design.",
+      "High-fidelity Figma prototype for a mobile billing app following Material Design 2 guidelines.",
     description:
-      "Independently conceived and designed a mobile billing application from the ground up during a short-term contract at AGB Communication Co., Ltd. Defined the full system flow, user journeys and information architecture without a prior reference system. Translated those flows into high-fidelity Figma prototypes following Material Design guidelines - covering payment screens, billing history, invoice detail views and account management. Focused on mobile-first design, thumb-friendly navigation and a clean, consistent visual language.",
+      "Independently conceived and designed a mobile billing application from the ground up during a short-term contract at AGB Communication Co., Ltd. Defined the full system flow, user journeys and information architecture without a prior reference system. Translated those flows into high-fidelity Figma prototypes following Material Design 2 guidelines - covering payment screens, billing history, invoice detail views and account management. Focused on mobile-first design, thumb-friendly navigation and a clean, consistent visual language.",
     image: "/images/projects/agb-billing-mobile-ui.png",
     heroImage: "/images/projects/billing-admin.png",
     category: "UI/UX Design",
     date: "Oct - Dec 2021",
     company: "AGB Communication",
-    tech: ["Figma", "Material Design"],
+    tech: ["Figma", "Material Design 2"],
     featured: true,
     features: [
       {
@@ -233,8 +233,8 @@ export const projects: Project[] = [
       },
       {
         icon: "🎨",
-        title: "Material Design",
-        desc: "Followed Google's Material Design 3 guidelines for components, colour and typography.",
+        title: "Material Design 2",
+        desc: "Followed Google's Material Design 2 guidelines for components, colour and typography.",
       },
       {
         icon: "🗺️",
