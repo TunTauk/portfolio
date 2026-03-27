@@ -1,11 +1,11 @@
 ---
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#awards", label: "Awards" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#about", label: "About" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#awards", label: "Awards" },
+  { href: "/#contact", label: "Contact" },
 ];
 ---
 
@@ -316,7 +316,7 @@ const navLinks = [
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navLinks.forEach((link) => {
-            const active = link.getAttribute("href") === `#${entry.target.id}`;
+            const active = link.getAttribute("href") === `/#${entry.target.id}`;
             (link as HTMLElement).style.color = active
               ? "var(--color-orange)"
               : "var(--color-muted)";

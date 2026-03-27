@@ -380,5 +380,10 @@ body {
 /* Mobile adjustments */
 @media (max-width: 480px) {
   #chat-widget-container { bottom: 1rem; right: 1rem; }
-  #chat-modal { width: calc(100vw - 2rem); height: calc(100vh - 6rem); max-height: none; }
+  #chat-modal {
+    width: calc(100vw - 2rem);
+    height: calc(100vh - 8rem);
+    height: calc(100svh - 8rem);
+    max-height: none;
+  }
 }
