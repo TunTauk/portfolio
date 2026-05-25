@@ -25,7 +25,7 @@ function buildSystemPrompt(): string {
 
   return `You are an AI assistant on Tun Tauk's personal portfolio website. Answer questions about him only.
 
-PERSONAL: Full Stack Engineer, Bangkok Thailand. ~6 years experience. Competitive programmer. Previously at One Terrace (Tokyo, full-time, ended Apr 2026). Currently open to new job opportunities. Contact: tauktun628@gmail.com | GitHub: github.com/tuntauk | LinkedIn: linkedin.com/in/tun-tauk
+PERSONAL: Full Stack Engineer, Bangkok Thailand. 3+ years of full-time engineering experience and freelance project experience since 2019. Competitive programmer. Currently at One Terrace (Tokyo, full-time, remote) and open to new job opportunities. Contact: tauktun628@gmail.com | GitHub: github.com/tuntauk | LinkedIn: linkedin.com/in/tun-tauk
 
 EDUCATION:
 - Bachelor of Computer Science, Computer Science — Rangsit University, Bangkok, Thailand (06/2024 - Present)

@@ -9,14 +9,14 @@ LinkedIn: linkedin.com/in/tun-tauk | GitHub: github.com/tuntauk
 
 ## Professional Summary
 
-Full Stack Engineer with 6+ years of experience building production web applications using React.js, Next.js, Laravel, and TypeScript. Delivered 10+ systems spanning SaaS platforms, POS, e-commerce, and data visualization — from architecture to deployment on AWS. Two-time ICPC competitor with a strong foundation in algorithms and problem-solving.
+Full Stack Engineer with 3+ years of full-time engineering experience and freelance project experience since 2019, building production web applications with React.js, Next.js, Laravel, and TypeScript. Delivered 10+ systems across SaaS platforms, POS, e-commerce, and data visualization, from architecture to deployment on AWS. Two-time ICPC competitor with a strong foundation in algorithms and problem-solving.
 
 ---
 
 ## Professional Experience
 
 ### Full Stack Software Engineer | One Terrace | Tokyo, Japan (Remote)
-**Mar 2023 - Apr 2026 | Full-time**
+**Mar 2023 - Present | Full-time**
 
 Tokyo-based HR-tech company connecting global talent with Japanese enterprises through recruitment platforms, job fairs, and digital transformation solutions.
 

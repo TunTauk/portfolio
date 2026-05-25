@@ -20,8 +20,8 @@ export interface ExperienceItem {
 
 export const experience: ExperienceItem[] = [
   {
-    period: "Mar 2023 - Apr 2026",
-    periodColor: "muted",
+    period: "Mar 2023 - Present",
+    periodColor: "orange",
     location: "Tokyo, Japan (Remote)",
     company: "One Terrace",
     companyUrl: "https://oneterrace.jp",
