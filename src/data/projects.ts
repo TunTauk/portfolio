@@ -252,6 +252,45 @@ export const projects: Project[] = [
   // ── Non-featured (accessible via direct URL) ────────────────────────────
 
   {
+    slug: "ideafresh-blog",
+    title: "Ideafresh Blog",
+    shortDesc:
+      "Shared Next.js technical blog, adapted from an open-source starter with contributions from multiple authors.",
+    description:
+      "Contributed to adapting and maintaining Ideafresh Blog, a shared technical publication covering software development, algorithms, and data structures. Based on Timothy Lin's Tailwind Next.js Starter Blog (timlrx/tailwind-nextjs-starter-blog), the site uses the Next.js Pages Router and MDX with statically generated articles, tag navigation, syntax highlighting, RSS feeds, and light/dark themes. Articles are credited to their respective authors, including Tun Tauk and other contributors; the starter's original design and functionality are credited to its maintainers. Originally launched in April 2022 under a different domain, the blog is now available at blog.ideafresh.dev.",
+    image: "/images/projects/ideafresh-blog.png",
+    heroImage: "/images/projects/ideafresh-blog.png",
+    category: "Web Application",
+    date: "Apr 2022 - Present",
+    company: "Ideafresh",
+    tech: ["Next.js", "React", "JavaScript", "Tailwind CSS", "MDX"],
+    featured: false,
+    liveUrl: "https://blog.ideafresh.dev/",
+    features: [
+      {
+        icon: "👥",
+        title: "Shared Authorship",
+        desc: "Technical articles from multiple contributors, with individual author profiles and per-post attribution.",
+      },
+      {
+        icon: "📝",
+        title: "MDX Publishing",
+        desc: "Template-provided Markdown and MDX publishing with syntax highlighting for technical articles.",
+      },
+      {
+        icon: "🏷️",
+        title: "Content Discovery",
+        desc: "Statically generated article pages, tag navigation, pagination, and RSS feeds supported by the starter.",
+      },
+      {
+        icon: "🌗",
+        title: "Responsive Reading",
+        desc: "Responsive layouts and light/dark themes adapted from the open-source starter blog.",
+      },
+    ],
+  },
+
+  {
     slug: "leetcode-solutions",
     title: "LeetCode Solutions",
     shortDesc:

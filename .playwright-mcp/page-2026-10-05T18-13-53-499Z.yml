@@ -1,0 +1,217 @@
+- generic [active] [ref=e1]:
+  - region "Notifications alt+T"
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link [ref=e5] [cursor=pointer]:
+          - /url: /en
+          - img "Myanmar Trader Care" [ref=e6]
+        - navigation [ref=e7]:
+          - link "Home" [ref=e8] [cursor=pointer]:
+            - /url: /en
+          - link "Brokers" [ref=e9] [cursor=pointer]:
+            - /url: /en/brokers
+          - link "Tutorials" [ref=e10] [cursor=pointer]:
+            - /url: /en/tutorials
+          - link "Blog" [ref=e11] [cursor=pointer]:
+            - /url: /en/blog
+          - link "Reviews" [ref=e12] [cursor=pointer]:
+            - /url: /en/reviews
+          - link "Performance" [ref=e13] [cursor=pointer]:
+            - /url: /en/performance
+          - link "FAQ" [ref=e14] [cursor=pointer]:
+            - /url: /en/faq
+      - generic [ref=e15]:
+        - button "English" [ref=e16]
+        - link "Login" [ref=e18] [cursor=pointer]:
+          - /url: /en/login
+    - main [ref=e19]:
+      - generic [ref=e20]:
+        - generic [ref=e21]:
+          - region [ref=e22]:
+            - generic [ref=e24]:
+              - group [ref=e25]:
+                - img "Your Trusted Forex Partner" [ref=e26]
+              - group [ref=e27]:
+                - img "Your Trusted Forex Partner" [ref=e28]
+              - group [ref=e29]:
+                - img "Your Trusted Forex Partner" [ref=e30]
+          - generic [ref=e31]:
+            - button "Go to slide 1" [ref=e32]
+            - button "Go to slide 2" [ref=e33]
+            - button "Go to slide 3" [ref=e34]
+        - generic [ref=e36]:
+          - generic [ref=e37]: Trusted Forex IB Platform
+          - heading "Your Trusted Forex Partner" [level=1] [ref=e38]
+          - paragraph [ref=e39]: Myanmar Trader Care is here to help every Myanmar citizen easily learn Forex Trading and partner with trusted Brokers — so you can trade with confidence.
+          - generic [ref=e40]:
+            - link "Contact for Courses" [ref=e41] [cursor=pointer]:
+              - /url: https://t.me/myanmartradercare
+            - link "Open Trading Account" [ref=e42] [cursor=pointer]:
+              - /url: /en/brokers
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - generic [ref=e46]: "4"
+          - generic [ref=e47]: Trusted Brokers
+        - generic [ref=e48]:
+          - generic [ref=e49]: "21"
+          - generic [ref=e50]: Tutorial Articles
+        - generic [ref=e51]:
+          - generic [ref=e52]: "8"
+          - generic [ref=e53]: Published Reviews
+        - generic [ref=e54]:
+          - generic [ref=e55]: "10"
+          - generic [ref=e56]: Community Questions
+      - generic [ref=e58]:
+        - generic [ref=e59]:
+          - generic [ref=e60]: ABOUT US
+          - heading "Your Trusted Partner in Forex Education" [level=2] [ref=e61]
+          - generic [ref=e62]:
+            - paragraph [ref=e63]: My name is Ar Kar Aung. Since 2021, I have been providing services to Myanmar Forex Traders at the Mandalay NFX Office — teaching Forex Trading education and handling deposits and withdrawals for Forex Trading accounts.
+            - paragraph [ref=e64]: In 2024, I partnered with Doo Prime Myanmar as a Freelancer IB, providing services for Forex Trading accounts. In 2025, I partnered with VT Market Broker, continuing to provide services as a Freelancer IB for Forex Trading accounts. Now, in 2026, I provide services across two Forex Brokers — VT Market Broker and Ultimate Market Broker.
+            - paragraph [ref=e65]: I have served Forex Traders for 5 years, accurately handling deposits and withdrawals for thousands of Forex Traders' trading accounts.
+            - paragraph [ref=e66]: Currently, in addition to Forex Traders inside Myanmar, I am also reliably and trustworthily serving the trading accounts of overseas Myanmar traders based in countries such as Thailand, Japan, Malaysia, and Singapore, every day.
+            - paragraph [ref=e67]: If you need a reliable and trustworthy Forex Trading account service, feel free to contact me today.
+        - generic [ref=e69]:
+          - region [ref=e70]:
+            - generic [ref=e72]:
+              - group [ref=e73]:
+                - img "About us - Forex trading education" [ref=e74]
+              - group [ref=e75]:
+                - img "About us - Forex trading education" [ref=e76]
+              - group [ref=e77]:
+                - img "About us - Forex trading education" [ref=e78]
+              - group [ref=e79]:
+                - img "About us - Forex trading education" [ref=e80]
+          - generic [ref=e81]:
+            - button "Go to slide 1" [ref=e82]
+            - button "Go to slide 2" [ref=e83]
+            - button "Go to slide 3" [ref=e84]
+            - button "Go to slide 4" [ref=e85]
+      - generic [ref=e87]:
+        - generic [ref=e88]:
+          - generic [ref=e89]: WHY CHOOSE US
+          - heading "Why Choose Myanmar Trader Care?" [level=2] [ref=e90]
+        - generic "Why Choose Myanmar Trader Care video" [ref=e92]
+      - generic [ref=e94]:
+        - generic [ref=e95]:
+          - generic [ref=e96]: FEATURED TUTORIALS
+          - heading "Start With Our Featured Tutorials" [level=2] [ref=e97]
+          - paragraph [ref=e98]: Jump into the tutorials our team recommends first, then explore the full library for more broker-specific walkthroughs.
+        - generic [ref=e99]:
+          - link [ref=e101] [cursor=pointer]:
+            - /url: /en/tutorials/ultima-market-tutorial
+            - generic [ref=e102]:
+              - img "How to Open a Trading Account on Ultima Market Broker" [ref=e104]
+              - generic [ref=e105]:
+                - paragraph [ref=e106]: How to Open a Trading Account on Ultima Market Broker
+                - paragraph [ref=e107]: Welcome to the step-by-step tutorial on how to open a live trading account with Ultima Markets. This guide will walk you through the entire registration and identity verification process to get your account up and running securely.
+          - link [ref=e109] [cursor=pointer]:
+            - /url: /en/tutorials/vt-market-tutorial
+            - generic [ref=e110]:
+              - img "How to Open a Trading Account on VT Markets" [ref=e112]
+              - generic [ref=e113]:
+                - paragraph [ref=e114]: How to Open a Trading Account on VT Markets
+                - paragraph [ref=e115]: Welcome to this step-by-step tutorial on opening a live trading account with VT Markets. We will guide you through the initial registration, personal detail verification, identity document upload, and finally, opening your specific MT5 trading account.
+          - link [ref=e117] [cursor=pointer]:
+            - /url: /en/tutorials/ultima-mt5-login
+            - generic [ref=e118]:
+              - img "How to Login to MT5 Account (Ultima Markets Broker)" [ref=e120]
+              - generic [ref=e121]:
+                - paragraph [ref=e122]: How to Login to MT5 Account (Ultima Markets Broker)
+                - paragraph [ref=e123]: Welcome to the tutorial on how to log in to your MetaTrader 5 (MT5) trading account with Ultima Markets. This guide will walk you through finding your login details in your email and entering them into the MT5 app.
+        - link "See more" [ref=e124] [cursor=pointer]:
+          - /url: /en/tutorials
+      - generic [ref=e126]:
+        - generic [ref=e127]:
+          - generic [ref=e128]: LEARN FROM THE BEST
+          - heading "Watch & Learn Forex Trading" [level=2] [ref=e129]
+          - paragraph [ref=e130]: Explore our curated video content from expert forex traders and educators.
+        - generic "Play video" [ref=e132]
+      - generic [ref=e134]:
+        - generic [ref=e135]:
+          - generic [ref=e136]: TESTIMONIALS
+          - heading "What Our Traders Say" [level=2] [ref=e137]
+        - generic [ref=e138]:
+          - generic [ref=e139]:
+            - generic [ref=e140]:
+              - generic [ref=e142]:
+                - generic [ref=e143]: MT
+                - generic [ref=e145]: Myint Thein
+              - paragraph [ref=e158]: အခုလို အချက်အလက်လေးတွေကို Website မှာ တစ်ခါတည်း ထည့်သွင်းဖော်ပြထားပေးလို့ တော်တော်လေး အဆင်ပြေပါတယ်။နောက်ပိုင်း Singnal လေးတွေ ပေးဖို့လည်း မျှော်လင့်နေပါမယ်
+            - generic [ref=e159]:
+              - generic [ref=e161]:
+                - generic [ref=e162]: PG
+                - generic [ref=e164]: Paing Gyi
+              - paragraph [ref=e177]: ကိုယ်တိုင် မဖွင့်တတ်လို့ အခတ်ခဲဖြစ်နေတာ၊ ခုလို Broker တစ်ခုချင်းစီ Tutorial video တွေ တင်ပေးထားတော့ အဆင်ပြေပါတယ်
+            - generic [ref=e178]:
+              - generic [ref=e180]:
+                - generic [ref=e181]: AM
+                - generic [ref=e183]: Aung Myint Myat
+              - paragraph [ref=e196]: ဝန်ဆောင်မှု အရမ်းကောင်းပါတယ်။ ငွေသွင်းထုတ်ပိုင်းရော စိတ်ချရပါတယ်။ စျေးကွက် သုံးသပ်ချက်တွေ တင်ပေးနိုင်ရင်တော့ အများကြီး ပို အဆင်ပြေနိုင်ပါတယ် ခမျာ။
+          - link "See more" [ref=e197] [cursor=pointer]:
+            - /url: /en/reviews
+      - generic [ref=e199]:
+        - generic [ref=e200]:
+          - generic [ref=e201]: FAQ
+          - heading "Frequently Asked Questions" [level=2] [ref=e202]
+        - generic [ref=e203]:
+          - group [ref=e204]:
+            - 'generic "Q: Is Myanmar Trader Care a platform that connects traders and brokers?" [ref=e205] [cursor=pointer]':
+              - generic [ref=e206]:
+                - generic [ref=e207]: "Q:"
+                - generic [ref=e208]: Is Myanmar Trader Care a platform that connects traders and brokers?
+            - paragraph [ref=e211]:
+              - generic [ref=e212]: "A:"
+              - generic [ref=e213]: Yes, it is. Myanmar Trader Care is a platform that connects traders who want to open their own Forex trading accounts with the right brokers according to their preferences.
+          - group [ref=e214]:
+            - 'generic "Q: If I don''t know how to open a trading account, will you guide me through the entire process?" [ref=e215] [cursor=pointer]':
+              - generic [ref=e216]:
+                - generic [ref=e217]: "Q:"
+                - generic [ref=e218]: If I don't know how to open a trading account, will you guide me through the entire process?
+            - paragraph [ref=e221]:
+              - generic [ref=e222]: "A:"
+              - generic [ref=e223]: Yes, we will. We don't just help you open your trading account; we also assist you with the entire deposit and withdrawal process.
+          - group [ref=e224]:
+            - 'generic "Q: What is the minimum deposit required to open a trading account with Myanmar Trader Care?" [ref=e225] [cursor=pointer]':
+              - generic [ref=e226]:
+                - generic [ref=e227]: "Q:"
+                - generic [ref=e228]: What is the minimum deposit required to open a trading account with Myanmar Trader Care?
+            - paragraph [ref=e231]:
+              - generic [ref=e232]: "A:"
+              - generic [ref=e233]: The minimum initial deposit to open an account is USD 100. For subsequent top-ups and withdrawals, our service starts from a minimum of USD 50.
+        - link "See more" [ref=e234] [cursor=pointer]:
+          - /url: /en/faq
+      - generic [ref=e236]:
+        - generic [ref=e237]:
+          - generic [ref=e238]: QUICK ACCESS
+          - heading "Choose Your Broker" [level=2] [ref=e239]
+          - paragraph [ref=e240]: Select a broker from the dropdown to view their details, tutorials, and performance metrics.
+          - combobox [ref=e241]:
+            - generic: Select a broker...
+        - generic [ref=e244]:
+          - heading "Join Our Community" [level=2] [ref=e245]
+          - paragraph [ref=e246]: Connect with fellow traders on Telegram for real-time updates, signals, and community support.
+          - link "Join Telegram Channel" [ref=e248] [cursor=pointer]:
+            - /url: https://t.me/myanmartradercare
+    - contentinfo [ref=e249]:
+      - img "Myanmar Trader Care" [ref=e251]
+      - paragraph [ref=e252]: © 2026 Myanmar Trader Care. All rights reserved.
+      - navigation [ref=e253]:
+        - link "Privacy Policy" [ref=e254] [cursor=pointer]:
+          - /url: /en/privacy
+        - link "Terms of Service" [ref=e255] [cursor=pointer]:
+          - /url: /en/terms
+        - link "Contact" [ref=e256] [cursor=pointer]:
+          - /url: /en/contact
+  - generic [ref=e257]:
+    - link "TikTok":
+      - /url: https://www.tiktok.com/@arkaraungforextrading?_r=1&_t=ZS-96Epk78O6jq
+    - link "Telegram":
+      - /url: https://t.me/myanmartradercare
+    - link "Line":
+      - /url: https://line.me/ti/p/HPF4-kUTMh
+    - link "WhatsApp":
+      - /url: https://wa.me/qr/C2P75TKPHTG7O1
+    - button "Toggle social links" [ref=e258]
+  - alert [ref=e261]
