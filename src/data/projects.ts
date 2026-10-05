@@ -282,6 +282,8 @@ export const projects: Project[] = [
     ],
   },
 
+  // ── Non-featured (accessible via direct URL) ────────────────────────────
+
   {
     slug: "agb-billing-mobile-ui",
     title: "AGB Billing Mobile UI",
@@ -297,7 +299,7 @@ export const projects: Project[] = [
     date: "Oct - Dec 2021",
     company: "AGB Communication",
     tech: ["Figma", "Material Design 2"],
-    featured: true,
+    featured: false,
     features: [
       {
         icon: "📱",
@@ -321,8 +323,6 @@ export const projects: Project[] = [
       },
     ],
   },
-
-  // ── Non-featured (accessible via direct URL) ────────────────────────────
 
   {
     slug: "ideafresh-blog",
