@@ -56,7 +56,7 @@ Built 5+ production systems spanning web platforms, e-commerce, gym management, 
 
 ## Education
 
-**Bachelor of Computer Science** | Rangsit University, Bangkok, Thailand | Jun 2024 - Present
+**Bachelor of Computer Science** | Rangsit University, Bangkok, Thailand | Jun 2024 - Dec 2026 (Expected)
 
 **Bachelor of Knowledge Engineering (Final Year)** | University of Computer Studies, Mandalay, Myanmar | Dec 2015 - Apr 2020
 

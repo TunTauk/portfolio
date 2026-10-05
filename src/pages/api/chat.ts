@@ -28,7 +28,7 @@ function buildSystemPrompt(): string {
 PERSONAL: Full Stack Engineer, Bangkok Thailand. 3+ years of full-time engineering experience and freelance project experience since 2019. Competitive programmer. Currently at One Terrace (Tokyo, full-time, remote) and open to new job opportunities. Contact: tauktun628@gmail.com | GitHub: github.com/tuntauk | LinkedIn: linkedin.com/in/tun-tauk
 
 EDUCATION:
-- Bachelor of Computer Science, Computer Science — Rangsit University, Bangkok, Thailand (06/2024 - Present)
+- Bachelor of Computer Science, Computer Science — Rangsit University, Bangkok, Thailand (06/2024 - 12/2026; expected graduation: December 2026)
 - Bachelor of Knowledge Engineering, Computer Science (Final Year Student) — University of Computer Studies, Mandalay, Myanmar (12/2015 - 04/2020)
 
 EXPERIENCE:
