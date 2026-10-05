@@ -2,14 +2,27 @@
 
 **Full Stack Software Engineer**
 
-tauktun628@gmail.com | +66-6354-82175 | Bangkok, Thailand
+tauktun628@gmail.com | +66 63 548 2175 | Bangkok, Thailand
 LinkedIn: linkedin.com/in/tun-tauk | GitHub: github.com/tuntauk
+Portfolio: tt.ideafresh.dev
 
 ---
 
 ## Professional Summary
 
-Full Stack Engineer with 3+ years of full-time engineering experience and freelance project experience since 2019, building production web applications with React.js, Next.js, Laravel, and TypeScript. Delivered 10+ systems across SaaS platforms, POS, e-commerce, and data visualization, from architecture to deployment on AWS. Two-time ICPC competitor with a strong foundation in algorithms and problem-solving.
+Full Stack Software Engineer with 3+ years of full-time engineering experience and freelance experience since 2019. Builds production web applications with Next.js, React, TypeScript, and Laravel, including frontend features, backend APIs, database integration, and authentication. Provides technical guidance through project setup and code reviews, and automates deployments with Docker and GitHub Actions. Experience spans data visualization, e-commerce, POS, and business management systems.
+
+---
+
+## Skills
+
+**Languages:** TypeScript, JavaScript, PHP, Python
+**Frontend:** Next.js, React, Tailwind CSS, shadcn/ui, Astro
+**Backend & APIs:** Node.js, Laravel, Express.js, NestJS, tRPC, REST APIs
+**Databases & ORM:** MySQL, MongoDB, SQLite, Firebase, Prisma
+**Authentication & Localization:** NextAuth.js, next-intl
+**Cloud & DevOps:** AWS (EC2, ECS, SES), DigitalOcean, Docker, GitHub Actions, CI/CD, Dokploy
+**Tools & Testing:** Git, Jest, Swagger/OpenAPI, Figma
 
 ---
 
@@ -18,27 +31,43 @@ Full Stack Engineer with 3+ years of full-time engineering experience and freela
 ### Full Stack Software Engineer | One Terrace | Tokyo, Japan (Remote)
 **Mar 2023 - Present | Full-time**
 
-Tokyo-based HR-tech company connecting global talent with Japanese enterprises through recruitment platforms, job fairs, and digital transformation solutions.
+Develop full-stack web applications for a Tokyo-based HR-tech company.
 
-- Implemented CI/CD pipelines with GitHub Actions and managed Docker-based deployments to AWS (EC2, ECS)
-- Designed database schemas, REST APIs, and internal admin systems serving multiple user roles
+- Implemented CI/CD pipelines with GitHub Actions and managed Docker-based deployments to AWS EC2 and ECS.
+- Designed database schemas, REST APIs, and internal admin systems supporting multiple user roles.
 
-**Featured Project: Koyou Assess** (koyouassess.jp) — Laravel, React.js, MySQL
-Built a compliance assessment platform for evaluating companies' foreign worker employment practices. Developed the full assessment lifecycle — questionnaire submission, assessor scheduling, on-site inspection tracking, and certification issuance — across both internal management and customer-facing applications.
+**ZicoLog 2** | Next.js, React, TypeScript | data.zicolog.com
+- Built frontend features and handled backend data preparation, processing, and integration for a traffic accident data visualization application as part of an engineering team.
+- Reviewed teammates' code contributions.
 
-**Featured Project: ZicoLog** (zicolog.com) — React.js, Laravel, MySQL, Google Maps API
-Developed a traffic accident data visualization platform for the Transportation Safety AI Laboratory. Built interactive map with location clustering, street-level panoramic views, advanced multi-dimensional filtering, and cross-tabulation analysis across 6 years of Japan accident records (2019-2024).
+**Traffic Accident Map** | Laravel, PHP, TypeScript | archive.zicolog.com (Archived)
+- Independently developed a traffic accident data visualization application.
+
+**Koyou Assess** | Laravel, React, MySQL | koyouassess.jp
+- Built internal management and customer-facing applications for a foreign worker employment compliance assessment platform.
 
 ### Full Stack Engineer | Ideafresh | Freelance
 **2019 - Present | Remote**
 
-Built 5+ production systems spanning web platforms, e-commerce, gym management, POS and inventory. Led multi-role architectures and multi-instance deployments.
+Develop web platforms, e-commerce, gym management, POS, and inventory systems for freelance clients, working independently and with another developer.
 
-- **Forex IB Marketing & Education Platform** — Multi-language Forex IB marketing & trader education platform with CMS, tutorial system, Q&A forum and admin panel.
-- **Suitup 777** — CMS-driven tailor website with admin dashboard, fabric inventory, online ordering, appointment logic and WhatsApp integration.
-- **CrossFit Gym & E-commerce** — Gym operations, product sales, customer fitness app.
-- **Kyaw Distribution POS** — Mobile sales tablet app, multi-instance deployments.
-- **UMT Store** — Role-based inventory system for Admin and Salesman operations with stock transfers, individual sales tracking and automated P&L reporting.
+**Myanmar Trader Care** | Next.js, TypeScript, tRPC, Prisma, MySQL | myanmartradercare.com
+- Co-developed an English/Myanmar broker and education platform; set up the project foundation, provided technical guidance, and reviewed my teammate's code.
+- Built public-facing pages and tRPC/Prisma backend integrations, account registration and login integration, password recovery, localization, and AWS SES notifications.
+- Implemented technical SEO and automated Docker deployments through GitHub Actions and Dokploy; my teammate built much of the admin console and the initial database schema.
+
+**Suitup 777** | Next.js, TypeScript, tRPC, Prisma, MySQL | suitup.archive.ideafresh.dev (Archived Demo)
+- Co-developed a tailoring platform, migrating an initial v0 scaffold into a full-stack Next.js structure and reviewing my teammate's code.
+- Built a six-step ordering workflow with draft-order APIs, persistent drafts, guest-to-account handoff, draft resumption, and order-access checks.
+- Implemented authentication and role guards, public catalog integration, AWS SES contact emails, and automated deployment; my teammate built much of the admin and customer-management functionality.
+
+**Kyaw Distribution POS** | React, TypeScript, Node.js, Express, MongoDB, Capacitor
+- Independently developed the web application, backend APIs, and Android sales app, covering sales invoices, purchasing, inventory, credit payments, and reporting with role-based access.
+- Integrated Bluetooth invoice printing, configured LAN access and multiple application instances, and automated Docker deployments with GitHub Actions and Dokploy.
+
+**Additional Projects**
+- **CrossFit Gym & E-commerce:** Built gym operations, product sales, and customer fitness applications.
+- **UMT Store:** Built role-based inventory workflows, stock transfers, sales tracking, and profit-and-loss reporting.
 
 ### Frontend Developer | AGB Communication Co., Ltd. | Yangon, Myanmar
 **Oct 2021 - Dec 2021 | Contract**
@@ -58,18 +87,7 @@ Built 5+ production systems spanning web platforms, e-commerce, gym management, 
 
 **Bachelor of Computer Science** | Rangsit University, Bangkok, Thailand | Jun 2024 - Dec 2026 (Expected)
 
-**Bachelor of Knowledge Engineering (Final Year)** | University of Computer Studies, Mandalay, Myanmar | Dec 2015 - Apr 2020
-
----
-
-## Skills
-
-**Frontend:** React.js, Next.js, Tailwind CSS, Shadcn UI, Astro
-**Backend:** Laravel, Node.js, Express.js, NestJS, PHP, Python
-**Databases:** MySQL, MongoDB, SQLite, Firebase
-**Cloud & DevOps:** AWS (EC2, ECS), DigitalOcean, Docker, GitHub Actions, CI/CD
-**Languages:** JavaScript, TypeScript, PHP, Python
-**Tools:** Git, Figma, Swagger/OpenAPI
+**Undergraduate Studies in Knowledge Engineering (Degree not completed)** | University of Computer Studies, Mandalay, Myanmar | Dec 2015 - Apr 2020
 
 ---
 
