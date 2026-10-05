@@ -315,9 +315,9 @@ export const projects: Project[] = [
     slug: "ideafresh-blog",
     title: "Ideafresh Blog",
     shortDesc:
-      "Shared Next.js technical blog, adapted from an open-source starter with contributions from multiple authors.",
+      "I help maintain a shared Next.js technical blog, adapted from an open-source starter, and contribute articles alongside other authors.",
     description:
-      "Contributed to adapting and maintaining Ideafresh Blog, a shared technical publication covering software development, algorithms, and data structures. Based on Timothy Lin's Tailwind Next.js Starter Blog (timlrx/tailwind-nextjs-starter-blog), the site uses the Next.js Pages Router and MDX with statically generated articles, tag navigation, syntax highlighting, RSS feeds, and light/dark themes. Articles are credited to their respective authors, including Tun Tauk and other contributors; the starter's original design and functionality are credited to its maintainers. Originally launched in April 2022 under a different domain, the blog is now available at blog.ideafresh.dev.",
+      "I contributed to adapting and maintaining Ideafresh Blog, a shared publication where I and other authors write about software development, algorithms, and data structures. I used Timothy Lin's Tailwind Next.js Starter Blog (timlrx/tailwind-nextjs-starter-blog) as the foundation, keeping its Next.js Pages Router and MDX publishing workflow, statically generated articles, tag navigation, syntax highlighting, RSS feeds, and light/dark themes. Each article credits its author, and the original design and starter features belong to the template's maintainers. The blog first launched in April 2022 under a different domain and is now available at blog.ideafresh.dev.",
     image: "/images/projects/ideafresh-blog.png",
     heroImage: "/images/projects/ideafresh-blog.png",
     category: "Web Application",
