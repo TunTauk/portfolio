@@ -11,6 +11,7 @@ export interface Project {
   company?: string;
   sourceUrl?: string;
   liveUrl?: string;
+  archived?: boolean;
   featured: boolean;
   featuresTitle?: string;
   features: { icon: string; title: string; desc: string }[];
@@ -79,6 +80,56 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "suitup-777",
+    title: "Suitup 777 - Tailoring & Order Management Platform",
+    liveUrl: "https://suitup.archive.ideafresh.dev/",
+    archived: true,
+    shortDesc:
+      "I co-developed a Next.js tailoring platform and built its multi-step ordering workflow, draft persistence, and account handoff. Now available as an archived demo.",
+    description:
+      "I co-developed Suitup, a tailoring website and order-management platform, with another developer. I migrated the initial v0-scaffolded site into a full-stack Next.js structure, set up the project foundation, and reviewed my teammate's code. I built the six-step customer ordering wizard, covering product and fabric selection, measurements, fitting appointments, delivery, and contact details. I implemented its tRPC/Prisma draft-order APIs, guest-to-account handoff, persisted state, draft resumption, and order-access checks. I also worked on authentication, registration, public catalog integration, AWS SES contact emails, and automated Docker deployment through GitHub Actions and Dokploy. My teammate implemented much of the admin console, customer profile and measurement management, gallery, and review features. The project is now an archived demo for portfolio viewing only and is no longer affiliated with Suit Up Bangkok Tailor.",
+    image: "/images/projects/suitup-archive.png",
+    heroImage: "/images/projects/suitup-archive.png",
+    category: "Web Application",
+    date: "Oct 2025 - Oct 2026",
+    company: "Ideafresh",
+    tech: ["Next.js", "React", "TypeScript", "tRPC", "Prisma", "MySQL", "NextAuth", "Zustand", "AWS SES", "Docker", "GitHub Actions"],
+    featured: true,
+    featuresTitle: "My Contributions",
+    features: [
+      {
+        icon: "🧭",
+        title: "Project Setup & Code Review",
+        desc: "I migrated the initial site into a full-stack Next.js/tRPC structure, configured the project foundation, and reviewed my teammate's implementation.",
+      },
+      {
+        icon: "🧵",
+        title: "Six-Step Ordering Workflow",
+        desc: "I built the customer wizard for product and fabric selection, measurements, fitting appointments, delivery preferences, and contact details.",
+      },
+      {
+        icon: "💾",
+        title: "Draft Persistence & Account Handoff",
+        desc: "I implemented draft-order APIs and guest-to-account handoff, with Zustand/localStorage persistence, draft resumption, expiry, and logout handling.",
+      },
+      {
+        icon: "🔐",
+        title: "Authentication & Order Access",
+        desc: "I reworked customer/admin authentication, added registration and role-specific API guards, and implemented order ownership checks and guest-draft expiration.",
+      },
+      {
+        icon: "🔗",
+        title: "Public Catalog Integration",
+        desc: "I implemented and refined product and fabric browsing and detail pages, connecting the customer-facing interface to tRPC endpoints and Prisma/MySQL queries.",
+      },
+      {
+        icon: "🚀",
+        title: "Contact Email & Deployment",
+        desc: "I implemented AWS SES contact notifications and confirmation emails, and configured Docker/GitHub Actions deployment through Dokploy.",
+      },
+    ],
+  },
+  {
     slug: "koyou-assess",
     title: "Koyou Assess - Employment Assessment System",
     shortDesc:
@@ -113,44 +164,6 @@ export const projects: Project[] = [
         icon: "🖥️",
         title: "Internal System",
         desc: "Back-office management system for assessors to coordinate evaluations and generate reports.",
-      },
-    ],
-  },
-  {
-    slug: "suitup-777",
-    title: "Suitup 777",
-    liveUrl: "https://www.suitup777.com/",
-    shortDesc:
-      "CMS-driven tailor website with admin dashboard, online ordering and WhatsApp integration.",
-    description:
-      "Designed and developed a custom CMS-driven tailor website with an admin dashboard, enabling management of product catalogs, fabric inventories, media galleries, customer profiles, and order workflows. Implemented an online ordering system with appointment logic, status tracking, and WhatsApp integration for customer communication.",
-    image: "/images/projects/suitup-777.png",
-    heroImage: "/images/projects/suitup-777.png",
-    category: "Web Application",
-    date: "2024",
-    company: "Ideafresh",
-    tech: ["Next.js", "MySQL"],
-    featured: true,
-    features: [
-      {
-        icon: "🧵",
-        title: "Product & Fabric CMS",
-        desc: "Manage product catalogs, fabric inventories and media galleries from one dashboard.",
-      },
-      {
-        icon: "🛒",
-        title: "Online Ordering",
-        desc: "Order system with appointment logic, status tracking and customer profiles.",
-      },
-      {
-        icon: "💬",
-        title: "WhatsApp Integration",
-        desc: "Automated customer communication via WhatsApp for order updates.",
-      },
-      {
-        icon: "🖼️",
-        title: "Media Gallery",
-        desc: "Rich media management for showcasing tailoring work and collections.",
       },
     ],
   },

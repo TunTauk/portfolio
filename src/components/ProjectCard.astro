@@ -38,7 +38,7 @@ const { project } = Astro.props;
           class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-white border border-white/30 hover:bg-white/20 transition-colors cursor-pointer"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          Live Demo
+          {project.archived ? 'Archived Demo' : 'Live Demo'}
         </span>
       )}
     </div>
@@ -46,6 +46,9 @@ const { project } = Astro.props;
 
   <!-- Content -->
   <div class="p-5 flex flex-col flex-1">
+    {project.archived && (
+      <p class="text-xs font-semibold mb-2" style="color: var(--color-orange);">Archived Demo · Showcase Only</p>
+    )}
     <h3 class="font-bold text-base mb-2 group-hover:transition-colors" style="color: var(--color-fg);">
       {project.title}
     </h3>
@@ -81,7 +84,7 @@ const { project } = Astro.props;
             style="border: 1px solid rgba(249,115,22,0.3); color: var(--color-orange); background: rgba(249,115,22,0.08);"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Live Demo
+            {project.archived ? 'Archived Demo' : 'Live Demo'}
           </span>
         )}
       </div>

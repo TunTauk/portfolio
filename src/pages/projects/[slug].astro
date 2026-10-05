@@ -44,7 +44,7 @@ const companyStyle = project.company ? (companyStyles[project.company] ?? compan
       {project.liveUrl && (
         <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="btn-orange flex-1 text-sm py-2.5 justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          Live Demo
+          {project.archived ? 'Archived Demo' : 'Live Demo'}
         </a>
       )}
     </div>
@@ -78,7 +78,14 @@ const companyStyle = project.company ? (companyStyles[project.company] ?? compan
       <!-- Title outside image -->
       <h1 class="font-extrabold leading-tight mb-8" style="font-size: clamp(1.5rem, 3.5vw, 2.4rem); color: var(--color-fg);">
         {project.title}
-      </h1>
+    </h1>
+
+      {project.archived && (
+        <div class="card p-5 mb-8">
+          <p class="font-semibold text-sm mb-1" style="color: var(--color-orange);">Archived Demo · Showcase Only</p>
+          <p class="text-sm leading-relaxed" style="color: var(--color-muted);">This demo is preserved for portfolio viewing only and is not intended for operational use.</p>
+        </div>
+      )}
 
       <div class="flex flex-col lg:flex-row gap-12">
 
@@ -123,7 +130,7 @@ const companyStyle = project.company ? (companyStyles[project.company] ?? compan
               {project.liveUrl && (
                 <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="btn-orange text-sm py-2 justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  Live Demo
+                  {project.archived ? 'Archived Demo' : 'Live Demo'}
                 </a>
               )}
             </div>
