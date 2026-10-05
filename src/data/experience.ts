@@ -46,7 +46,7 @@ export const experience: ExperienceItem[] = [
     description:
       "Built 5+ production systems spanning web platforms, e-commerce, gym management, POS and inventory. Led multi-role architectures and multi-instance deployments.",
     projects: [
-      { title: "Forex IB Marketing & Education Platform", desc: "Multi-language Forex IB marketing & trader education platform with CMS, tutorial system, Q&A forum and admin panel.", slug: "forex-ib-marketing-platform" },
+      { title: "Myanmar Trader Care", desc: "I co-developed a bilingual Next.js platform with another developer. I set up the project structure, reviewed my teammate's code, and built the public-facing features, backend workflows, email integrations, SEO, and deployment pipeline.", slug: "forex-ib-marketing-platform" },
       { title: "Suitup 777",                              desc: "CMS-driven tailor website with admin dashboard, fabric inventory, online ordering, appointment logic and WhatsApp integration.", slug: "suitup-777" },
       { title: "CrossFit Gym & E-commerce",               desc: "Gym operations, product sales, customer fitness app.",        slug: "crossfit-gym-platform" },
       { title: "Kyaw Distribution POS",                   desc: "Mobile sales tablet app, multi-instance deployments.",       slug: "kyaw-distribution-pos" },

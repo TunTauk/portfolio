@@ -141,7 +141,7 @@ const companyStyle = project.company ? (companyStyles[project.company] ?? compan
 
           <!-- Key Features -->
           <div>
-            <h2 class="text-xl font-bold mb-4" style="color: var(--color-fg);">Key Features</h2>
+            <h2 class="text-xl font-bold mb-4" style="color: var(--color-fg);">{project.featuresTitle ?? 'Key Features'}</h2>
             <div class="w-10 h-0.5 mb-6" style="background: var(--color-teal);"></div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {project.features.map(f => (

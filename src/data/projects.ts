@@ -12,12 +12,72 @@ export interface Project {
   sourceUrl?: string;
   liveUrl?: string;
   featured: boolean;
+  featuresTitle?: string;
   features: { icon: string; title: string; desc: string }[];
   architectureImage?: string;
 }
 
 export const projects: Project[] = [
   // ── Featured ──────────────────────────────────────────────────────────────
+  {
+    slug: "forex-ib-marketing-platform",
+    title: "Myanmar Trader Care - Forex Broker & Education Platform",
+    shortDesc:
+      "I co-developed a bilingual Next.js platform, built its public-facing features and backend workflows, and guided the project through setup and code reviews.",
+    description:
+      "I co-developed Myanmar Trader Care, an English/Myanmar forex broker and education platform, with another developer as a freelance project. I set up the project structure and full-stack foundation, provided technical guidance, and reviewed my teammate's code. I built the customer-facing Next.js pages and their tRPC/Prisma backend integrations for broker listings, tutorials, reviews, performance galleries, and member Q&A. I also implemented account registration, approval-gated login integration, password recovery, AWS SES notifications, localization, and Tiptap editing with sanitized content rendering. I handled technical SEO and automated Docker deployments through GitHub Actions and Dokploy. My teammate built much of the admin console, the initial database schema, and the later blog module.",
+    image: "/images/projects/myanmar-trader-care.png",
+    heroImage: "/images/projects/myanmar-trader-care.png",
+    category: "Web Application",
+    date: "Mar 2026 - Present",
+    company: "Ideafresh",
+    tech: ["Next.js", "React", "TypeScript", "tRPC", "Prisma", "MySQL", "NextAuth", "next-intl", "AWS SES", "Docker", "GitHub Actions"],
+    featured: true,
+    liveUrl: "https://myanmartradercare.com/",
+    featuresTitle: "My Contributions",
+    features: [
+      {
+        icon: "🧭",
+        title: "Project Setup & Code Review",
+        desc: "I set up the project structure and full-stack foundation, guided implementation, and reviewed my teammate's code.",
+      },
+      {
+        icon: "🔗",
+        title: "Full-Stack Feature Delivery",
+        desc: "I built the public broker, tutorial, review, and performance pages plus member Q&A, connecting Next.js pages to tRPC endpoints and Prisma/MySQL queries.",
+      },
+      {
+        icon: "🔐",
+        title: "Account & Password Recovery",
+        desc: "I built registration and integrated approval-gated login, with hashed passwords and expiring, single-use password reset tokens applied through database transactions.",
+      },
+      {
+        icon: "📧",
+        title: "Transactional Email",
+        desc: "I integrated AWS SES for registration alerts, approval/rejection notices, Q&A responses, password resets, and contact-form notifications.",
+      },
+      {
+        icon: "🌍",
+        title: "English/Myanmar Localization",
+        desc: "I added English/Myanmar localization with next-intl across the landing page, authentication, brokers, tutorials, reviews, Q&A, and performance pages.",
+      },
+      {
+        icon: "📝",
+        title: "Rich-Text Editing",
+        desc: "I added Tiptap editing to the existing broker and tutorial admin forms and sanitized rendered HTML using an allowlist of tags, attributes, and URL schemes.",
+      },
+      {
+        icon: "🔍",
+        title: "Technical SEO",
+        desc: "I implemented Next.js metadata, canonical and hreflang URLs, social previews, structured data, crawlable pagination, and filtered-page indexing controls.",
+      },
+      {
+        icon: "🚀",
+        title: "Automated Deployment",
+        desc: "I configured Docker builds and GitHub Actions to publish container images and deploy to production through Dokploy.",
+      },
+    ],
+  },
   {
     slug: "koyou-assess",
     title: "Koyou Assess - Employment Assessment System",
@@ -403,44 +463,6 @@ export const projects: Project[] = [
         icon: "📋",
         title: "Detailed Incident Data",
         desc: "Comprehensive records covering party info, vehicle damage, collision points, and jurisdiction details.",
-      },
-    ],
-  },
-
-  {
-    slug: "forex-ib-marketing-platform",
-    title: "Forex IB Marketing & Education Platform",
-    shortDesc:
-      "Multi-language CMS with trader education, Q&A forum, performance board and admin panel.",
-    description:
-      "Designed and developed a multi-language (EN/MM) web platform for Forex IB marketing and trader education. The system includes a dynamic landing page with CMS-based content management, provider showcase and a structured tutorial system supporting both step-by-step learning modules and flexible content blocks. Implemented user authentication with admin approval, a moderated review system with featured display and a member-only Q&A forum. Built a performance board for showcasing trading proof through a gallery-based interface. Developed a centralized admin panel for managing content, users and platform interactions.",
-    image: "/images/projects/forex-ib.png",
-    heroImage: "/images/projects/forex-ib.png",
-    category: "Web Application",
-    date: "Mar 2026 - Present",
-    company: "Ideafresh",
-    tech: ["Next.js", "MySQL"],
-    featured: false,
-    features: [
-      {
-        icon: "🌍",
-        title: "Multi-language CMS",
-        desc: "EN/MM content management with dynamic landing pages and provider showcase.",
-      },
-      {
-        icon: "📚",
-        title: "Tutorial System",
-        desc: "Step-by-step learning modules and flexible content blocks for trader education.",
-      },
-      {
-        icon: "💬",
-        title: "Member Q&A Forum",
-        desc: "Member-only forum with moderated review system and featured display.",
-      },
-      {
-        icon: "📊",
-        title: "Performance Board",
-        desc: "Gallery-based interface for showcasing trading proof and results.",
       },
     ],
   },
