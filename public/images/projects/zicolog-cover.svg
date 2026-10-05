@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">ZicoLog — Traffic Accident Data Visualization</title>
+  <desc id="desc">A neutral project cover identifying Traffic Accident Map as Laravel and ZicoLog 2 as Next.js. No application screens or data are shown.</desc>
+  <rect width="1200" height="630" fill="#111827"/>
+  <circle cx="1090" cy="80" r="210" fill="#14b8a6" opacity="0.06"/>
+  <circle cx="70" cy="620" r="230" fill="#f97316" opacity="0.06"/>
+  <g font-family="system-ui, -apple-system, sans-serif">
+    <text x="80" y="105" font-size="20" letter-spacing="4" fill="#5eead4">PROFESSIONAL WORK · ONE TERRACE</text>
+    <text x="80" y="205" font-size="70" font-weight="700" fill="#f9fafb">ZicoLog</text>
+    <text x="80" y="257" font-size="28" fill="#9ca3af">Traffic Accident Data Visualization</text>
+    <rect x="80" y="325" width="500" height="170" rx="18" fill="#1f2937" stroke="#374151"/>
+    <rect x="620" y="325" width="500" height="170" rx="18" fill="#1f2937" stroke="#374151"/>
+    <text x="110" y="373" font-size="18" fill="#f97316">LARAVEL · TYPESCRIPT</text>
+    <text x="110" y="418" font-size="30" font-weight="600" fill="#f9fafb">Traffic Accident Map</text>
+    <text x="110" y="461" font-size="20" fill="#9ca3af">Independent application development</text>
+    <text x="650" y="373" font-size="18" fill="#5eead4">NEXT.JS · REACT · TYPESCRIPT</text>
+    <text x="650" y="418" font-size="30" font-weight="600" fill="#f9fafb">ZicoLog 2</text>
+    <text x="650" y="461" font-size="20" fill="#9ca3af">Team contribution</text>
+    <text x="80" y="565" font-size="18" fill="#6b7280">High-level overview · Implementation details confidential</text>
+  </g>
+</svg>

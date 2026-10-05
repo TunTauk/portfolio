@@ -11,6 +11,7 @@ export interface Project {
   company?: string;
   sourceUrl?: string;
   liveUrl?: string;
+  demoLinks?: { label: string; url: string }[];
   archived?: boolean;
   featured: boolean;
   featuresTitle?: string;
@@ -443,39 +444,33 @@ export const projects: Project[] = [
   },
   {
     slug: "zicolog",
-    title: "ZicoLog - Traffic Accident Visualization Platform",
+    title: "ZicoLog - Traffic Accident Data Visualization",
     shortDesc:
-      "Interactive map-based platform visualizing Japan traffic accident data with advanced filtering and cross-tabulation analysis.",
+      "I independently developed Laravel-based Traffic Accident Map. On Next.js-based ZicoLog 2, I built frontend features, handled backend data preparation and processing, and reviewed my teammates' contributions.",
     description:
-      "Developed a data visualization web platform for the Transportation Safety AI Laboratory that presents Japan's traffic accident records spanning 2019-2024. The system features an interactive map with location clustering, detailed incident data including weather, vehicle type, injury severity, and party-specific information. Supports advanced filtering across multiple dimensions and cross-tabulation analysis for safety research and policy decision-making.",
-    image: "/images/projects/zicolog.png",
-    heroImage: "/images/projects/zicolog.png",
+      "I worked on two traffic accident data visualization applications at One Terrace. I independently developed Traffic Accident Map using Laravel and TypeScript. On the Next.js-based ZicoLog 2, I worked as part of a team, building frontend features, handling backend data preparation, processing, and integration, and reviewing my teammates' contributions. Implementation details remain confidential.",
+    image: "/images/projects/zicolog-cover.svg",
+    heroImage: "/images/projects/zicolog-cover.svg",
     category: "Web Application",
-    date: "May 2025 - Aug 2025",
+    date: "2025 - 2026",
     company: "One Terrace",
-    tech: ["React.js", "Laravel", "MySQL", "Google Maps API"],
-    liveUrl: "https://zicolog.com/",
+    tech: ["Next.js", "React", "TypeScript", "Laravel", "PHP"],
+    demoLinks: [
+      { label: "TAM (Archived)", url: "https://archive.zicolog.com/" },
+      { label: "ZicoLog 2", url: "https://data.zicolog.com/" },
+    ],
     featured: false,
+    featuresTitle: "My Contributions",
     features: [
       {
         icon: "🗺️",
-        title: "Interactive Map",
-        desc: "Location-based clustering on Google Maps with street-level panoramic views of accident sites.",
+        title: "Traffic Accident Map · Laravel",
+        desc: "I independently developed this Laravel/PHP and TypeScript application. Development started in May 2025; the linked site is archived.",
       },
       {
-        icon: "🔍",
-        title: "Advanced Filtering",
-        desc: "Filter by age group, injury severity, time of day, accident type, and weather conditions.",
-      },
-      {
-        icon: "📊",
-        title: "Cross-tabulation Analysis",
-        desc: "Examine correlations between variables across 2019-2024 accident data for safety research.",
-      },
-      {
-        icon: "📋",
-        title: "Detailed Incident Data",
-        desc: "Comprehensive records covering party info, vehicle damage, collision points, and jurisdiction details.",
+        icon: "🤝",
+        title: "ZicoLog 2 · Next.js",
+        desc: "From February 2026, I built frontend features, handled backend data preparation, processing, and integration, and reviewed my teammates' contributions to this Next.js, React, and TypeScript application.",
       },
     ],
   },
@@ -561,6 +556,13 @@ export const featuredProjects = projects.filter((p) => p.featured);
 
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
+}
+
+export function getProjectDemoLinks(project: Project): { label: string; url: string }[] {
+  return project.demoLinks ?? (project.liveUrl ? [{
+    label: project.archived ? "Archived Demo" : "Live Demo",
+    url: project.liveUrl,
+  }] : []);
 }
 
 export function getAdjacentProjects(slug: string): {

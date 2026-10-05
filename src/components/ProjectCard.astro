@@ -1,11 +1,13 @@
 ---
 import type { Project } from '../data/projects';
+import { getProjectDemoLinks } from '../data/projects';
 
 interface Props {
   project: Project;
 }
 
 const { project } = Astro.props;
+const demoLinks = getProjectDemoLinks(project);
 ---
 
 <a
@@ -22,7 +24,7 @@ const { project } = Astro.props;
       loading="lazy"
     />
     <!-- Overlay on hover -->
-    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-wrap items-center justify-center gap-3 p-3">
       {project.sourceUrl && (
         <span
           onclick={`event.stopPropagation(); event.preventDefault(); window.open('${project.sourceUrl}','_blank')`}
@@ -32,15 +34,15 @@ const { project } = Astro.props;
           Source
         </span>
       )}
-      {project.liveUrl && (
+      {demoLinks.map(link => (
         <span
-          onclick={`event.stopPropagation(); event.preventDefault(); window.open('${project.liveUrl}','_blank')`}
+          onclick={`event.stopPropagation(); event.preventDefault(); window.open('${link.url}','_blank')`}
           class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-white border border-white/30 hover:bg-white/20 transition-colors cursor-pointer"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          {project.archived ? 'Archived Demo' : 'Live Demo'}
+          {link.label}
         </span>
-      )}
+      ))}
     </div>
   </div>
 
@@ -65,8 +67,8 @@ const { project } = Astro.props;
     </div>
 
     <!-- Mobile action buttons (always visible, hidden on desktop where hover overlay is used) -->
-    {(project.sourceUrl || project.liveUrl) && (
-      <div class="flex gap-2 mt-auto sm:hidden">
+    {(project.sourceUrl || demoLinks.length > 0) && (
+      <div class="flex flex-wrap gap-2 mt-auto sm:hidden">
         {project.sourceUrl && (
           <span
             onclick={`event.stopPropagation(); event.preventDefault(); window.open('${project.sourceUrl}','_blank')`}
@@ -77,16 +79,16 @@ const { project } = Astro.props;
             Source
           </span>
         )}
-        {project.liveUrl && (
+        {demoLinks.map(link => (
           <span
-            onclick={`event.stopPropagation(); event.preventDefault(); window.open('${project.liveUrl}','_blank')`}
+            onclick={`event.stopPropagation(); event.preventDefault(); window.open('${link.url}','_blank')`}
             class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold cursor-pointer transition-colors"
             style="border: 1px solid rgba(249,115,22,0.3); color: var(--color-orange); background: rgba(249,115,22,0.08);"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            {project.archived ? 'Archived Demo' : 'Live Demo'}
+            {link.label}
           </span>
-        )}
+        ))}
       </div>
     )}
   </div>

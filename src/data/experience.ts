@@ -31,7 +31,7 @@ export const experience: ExperienceItem[] = [
       "Built full-stack apps with Laravel, Next.js, React, NestJS. Managed CI/CD pipelines, Docker configs, and AWS deployments.",
     projects: [
       { title: "Koyou Assess - Employment Assessment System", desc: "Internal management system and customer app for foreign worker employment compliance assessments in Japan.", slug: "koyou-assess" },
-      { title: "ZicoLog - Traffic Accident Visualization Platform", desc: "Interactive map-based platform visualizing Japan traffic accident data with filtering and cross-tabulation analysis.", slug: "zicolog" },
+      { title: "ZicoLog - Traffic Accident Data Visualization", desc: "I independently developed Traffic Accident Map with Laravel and TypeScript. On Next.js-based ZicoLog 2, I built frontend features, handled backend data preparation and processing, and reviewed my teammates' contributions.", slug: "zicolog" },
     ],
     tags: ["Laravel", "Next.js", "AWS", "Docker", "MySQL"],
   },

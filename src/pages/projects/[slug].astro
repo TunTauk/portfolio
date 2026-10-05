@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar     from '../../components/Navbar.astro';
 import Footer     from '../../components/Footer.astro';
-import { projects, getProjectBySlug, getAdjacentProjects } from '../../data/projects';
+import { projects, getProjectBySlug, getAdjacentProjects, getProjectDemoLinks } from '../../data/projects';
 
 export function getStaticPaths() {
   // Slugs with dedicated static pages - exclude from dynamic route
@@ -14,6 +14,7 @@ export function getStaticPaths() {
 
 const { slug } = Astro.params;
 const project  = getProjectBySlug(slug!)!;
+const demoLinks = getProjectDemoLinks(project);
 const { prev, next } = getAdjacentProjects(slug!);
 
 const companyStyles: Record<string, string> = {
@@ -33,20 +34,20 @@ const companyStyle = project.company ? (companyStyles[project.company] ?? compan
   <Navbar />
 
   <!-- Mobile sticky CTA bar -->
-  {(project.liveUrl || project.sourceUrl) && (
-    <div class="lg:hidden fixed bottom-0 left-0 right-0 z-50 flex gap-3 p-3" style="background: var(--color-bg); border-top: 1px solid var(--color-border); backdrop-filter: blur(12px);">
+  {(demoLinks.length > 0 || project.sourceUrl) && (
+    <div class="lg:hidden fixed bottom-0 left-0 right-0 z-50 flex flex-wrap gap-3 p-3" style="background: var(--color-bg); border-top: 1px solid var(--color-border); backdrop-filter: blur(12px);">
       {project.sourceUrl && (
         <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" class="btn-outline flex-1 text-sm py-2.5 justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
           Source Code
         </a>
       )}
-      {project.liveUrl && (
-        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="btn-orange flex-1 text-sm py-2.5 justify-center">
+      {demoLinks.map(link => (
+        <a href={link.url} target="_blank" rel="noopener noreferrer" class="btn-orange flex-1 text-sm py-2.5 justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          {project.archived ? 'Archived Demo' : 'Live Demo'}
+          {link.label}
         </a>
-      )}
+      ))}
     </div>
   )}
 
@@ -127,12 +128,12 @@ const companyStyle = project.company ? (companyStyles[project.company] ?? compan
                   Source Code
                 </a>
               )}
-              {project.liveUrl && (
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="btn-orange text-sm py-2 justify-center">
+              {demoLinks.map(link => (
+                <a href={link.url} target="_blank" rel="noopener noreferrer" class="btn-orange text-sm py-2 justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  {project.archived ? 'Archived Demo' : 'Live Demo'}
+                  {link.label}
                 </a>
-              )}
+              ))}
             </div>
           </div>
         </aside>
