@@ -28,4 +28,4 @@ pnpm-debug.log*
 .vercel
 
 # Generated CV PDFs, HTML previews, and verification reports
-generated/cv/
+generated/
