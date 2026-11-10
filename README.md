@@ -6,7 +6,9 @@ Use Node.js 22.13+ (Node.js 24 recommended). `portfolio.md` is the shared conten
 source. The generator produces two A4,
 two-page PDFs: an ATS-focused version without a photo, and a version with a
 compact portrait from `public/images/profile.jpg`. It never modifies the website's
-existing `public/tun-tauk.pdf` or the original photo.
+existing `public/tun-tauk.pdf` or the original photo. The photo is downscaled in
+memory (1000px long side, JPEG) before rendering, so the photo PDF stays small
+even with a full-resolution camera image.
 
 ```sh
 pnpm install

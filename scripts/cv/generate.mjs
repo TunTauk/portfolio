@@ -39,6 +39,33 @@ async function verifyPdf(buffer, layout) {
   }
 }
 
+// Chromium embeds images in the PDF at full resolution, so a camera photo would add
+// megabytes for a 24 x 28 mm portrait. Downscale an in-memory copy; the source file is untouched.
+const PHOTO_MAX_SIDE = 1000;
+const PHOTO_JPEG_QUALITY = 0.85;
+
+async function shrinkPhoto(browser, dataUrl) {
+  const page = await browser.newPage();
+  try {
+    const resized = await page.evaluate(async ({ dataUrl, maxSide, quality }) => {
+      const image = new Image();
+      image.src = dataUrl;
+      await image.decode();
+      const scale = Math.min(1, maxSide / Math.max(image.naturalWidth, image.naturalHeight));
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.round(image.naturalWidth * scale);
+      canvas.height = Math.round(image.naturalHeight * scale);
+      const context = canvas.getContext('2d');
+      context.imageSmoothingQuality = 'high';
+      context.drawImage(image, 0, 0, canvas.width, canvas.height);
+      return canvas.toDataURL('image/jpeg', quality);
+    }, { dataUrl, maxSide: PHOTO_MAX_SIDE, quality: PHOTO_JPEG_QUALITY });
+    return resized.length < dataUrl.length ? resized : dataUrl;
+  } finally {
+    await page.close();
+  }
+}
+
 async function main() {
   const { values } = parseArgs({ options: {
     source: { type: 'string', default: 'portfolio.md' },
@@ -50,7 +77,7 @@ async function main() {
   const mime = photoBytes[0] === 0xff && photoBytes[1] === 0xd8 ? 'image/jpeg'
     : photoBytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10])) ? 'image/png' : null;
   if (!mime) throw new Error('Photo must be a JPEG or PNG file.');
-  const photo = `data:${mime};base64,${photoBytes.toString('base64')}`;
+  const originalPhoto = `data:${mime};base64,${photoBytes.toString('base64')}`;
   const css = await readFile(new URL('./resume.css', import.meta.url), 'utf8');
   let browser;
   try {
@@ -61,6 +88,7 @@ async function main() {
 
   const results = [];
   try {
+    const photo = await shrinkPhoto(browser, originalPhoto);
     for (const withPhoto of [false, true]) {
       const { name, html } = renderResume(source, { css, photo: withPhoto ? photo : undefined });
       const page = await browser.newPage();
