@@ -29,3 +29,4 @@ pnpm-debug.log*
 
 # Generated CV PDFs, HTML previews, and verification reports
 generated/
+draft/
